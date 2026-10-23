@@ -1,26 +1,43 @@
 <!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{{ page.title }}</title>
+    <title>
+      {% if page.title %}
+        {{ page.title }} | {{ site.title | default: "Maths Notes" }}
+      {% else %}
+        {{ site.title | default: "Maths Notes" }}
+      {% endif %}
+    </title>
 
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
-      }
-    };
-  </script>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
-  <script defer
-    src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js">
-  </script>
-</head>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)'], ['$', '$']],
+          displayMath: [['\\[', '\\]'], ['$$', '$$']]
+        }
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
 
-<body>
-  {{ content }}
-</body>
+  <body>
+    <header class="site-header">
+      <a href="{{ '/' | relative_url }}">
+        {{ site.title | default: "Maths Notes" }}
+      </a>
+    </header>
+
+    <main class="site-content">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <p>Maths notes and research ideas.</p>
+    </footer>
+  </body>
 </html>
