@@ -7,13 +7,15 @@ tags:
   - optimisation
   - taylor series
 ---
-When I first learnt about stationary points, I leaned heavily on visualisation. It was sufficient to imagine that the tangent lines at different points of a function would rotate around, up-or-down, depending on how the graph looks, as we slide along the x-axis. Whenever the tangent becomes horizontal, we have a stationary point $(x, f(x))$.
+When I first learned about stationary points, I leaned heavily on visualisation. It was sufficient (and fun) for me to imagine that the tangent lines at different points of a function would rotate up-or-down, depending on how the graph looks, if we slided along the x-axis. Whenever the tangent becomes horizontal, we have a stationary point.
 
-The idea involving second derivative test is also geometric. The slope of the tangent line is $f'(x)$, and at stationary points it is $0$. Whether it is a (local) maximum or a minimum depends on how the slope changes as we move left to right on the x-axis.
+The classification of stationary points involving the second derivative test also has a geometric explanation. The slope of the tangent line is $f'(x)$, and at stationary points it is $0$. Whether it is a (local) maximum or a minimum depends on how the slope changes as we move from left to right on the x-axis.
 
-The good thing about this intuition is that I never had to memorise the conditions on the second derivative that correlated with the types of stationary points. I would call upon my mental image of some random graph around its minimum to see that as we moved from $x-h$ to $x$ to $x+h$, the slope must go from negative to 0 and then to positive, and therefore, the second derivative must have to increase with increasing $x$. Therefore, the right test for a local minimum must have to be $f''(x)>0$ and $f''(x)<0$ for the maximum.
+A nice thing about these intuitions is that I never had to memorise the particulars of the tests. I would call upon an image of a smooth-looking graph around its minimum and deduce that if we moved from $(x-h)$ to $x$ to $(x+h)$, the slope must go from negative (line leaning left) to 0 and then to positive (line leaning right). Therefore, the second derivative must have to be increasing with $x$ and this implied that the correct test for a local minimum must have to be $f''(x)>0$ (and $f''(x)<0$ for the maximum, by extension).
 
-The issue with a visualisation-based recall technique is that it's only as good as our visualisation skills, which gets increasing poorer as we move up dimensions. For example, 
+I could never explain (or, paid much attention to) the $f''(x)=0$ case though, except for the trivial cases of either a constant ($f(x)=c$) or an affine function ($f(x)=mc+c$) where the slope never changes. I never understood what happens at $x=0$ for $f(x)=x^4$, and how is that different from $f(x)=x^3$.
+
+The limitation of an animation-based reconstruction technique is that it is only as good as our imagination, which gets increasing poorer as we move up in dimensions. For example, even for $f:\mathbb{R}^2\to\mathbb{R}$, 
 
 - second derivative test for stationary points
 - rules for hessian for the multivariate case
