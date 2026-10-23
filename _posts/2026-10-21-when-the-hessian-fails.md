@@ -7,20 +7,90 @@ tags:
   - optimisation
   - taylor series
 ---
-When I first learned about stationary points, I leaned heavily on visualisation. It was sufficient (and fun) for me to imagine that the tangent lines of a function would rotate up or down as we slid along the $x$-axis, depending on how the graph looks at different points. Whenever the tangent became horizontal, we had a stationary point.
+When I first learned about stationary points, I leaned heavily on visual intuition. It was sufficient (and fun) to imagine that the tangent lines of a function would rotate up or down as we slid along the $x$-axis, depending on how the graph looks at different points. Whenever the tangent became horizontal, we had a stationary point.
 
-The classification of stationary points involved the second derivative test. Fortunately for me, it also has a geometric explanation. The slope of the tangent line is $f'(x)$, and at stationary points it is $0$. Whether it is a (local) maximum or a minimum depends on how the slope changes as we move from left to right on the $x$-axis passing through that point.
+A nice thing about these intuitions is that I never had to memorise the particulars. For example, the classification of stationary points involved the second derivative test. Fortunately for me, this one also had a visual explanation. When needed, I would call upon an image of a smooth-looking graph around its minimum and deduce that if we moved from left to right passing through the stationary point, the slope of the tangent must go from negative (leaning left) to $0$ and then to positive (leaning right). Therefore, the second derivative must be increasing in the positive direction of $x$, which implied that the correct test for a local minimum was $f^{\prime\prime}(x)>0$ (and $f^{\prime\prime}(x)<0$ for the maximum, by extension).
 
-A nice thing about these intuitions is that I never had to memorise the particulars of things I needed to use. I would call upon an image of a smooth-looking graph around its minimum and deduce that if we moved from $(x-h)$ to $x$ to $(x+h)$, the slope of the tangent must go from negative (line leaning left) to 0 and then to positive (line leaning right). Therefore, the second derivative must be increasing with $x$, which implied that the correct test for a local minimum must be $f''(x)>0$ (and $f''(x)<0$ for the maximum, by extension).
+The limitation of this animation-based mental reconstruction technique is that it is only as good as our imagination. It gets increasingly unreliable as things get subtle or as we move up in dimensions. As a concrete example of the subtle case, I could never explain (or, pay much attention to) the $f^{\prime\prime}(x)=0$ case, except for the trivial scenarios involving a constant $f(x)=c$ or an affine function $f(x)=mx+c$. These are trivial because the slope never changes in the entire domain. I never thought much about what happens at $x=0$ for $f(x)=x^4$, and whether or how it is different from $f(x)=x^3$.
 
-The limitation of an animation-based mental reconstruction technique is that it is only as good as our imagination. It gets increasingly unreliable as things get subtle or as we move up in dimensions. As a concrete example of the subtle case, I could never explain (or, pay much attention to) the $f''(x)=0$ case, except for the trivial cases of either a constant $f(x)=c$ or an affine function $f(x)=mx+c$. These are trivial because the slope never changes in the entire domain. I never thought about what happens at $x=0$ for $f(x)=x^4$, and whether or how it is different from $f(x)=x^3$. 
+As for higher dimensions, even for $f:\mathbb{R}^2\to\mathbb{R}$, things became difficult. I did the best I could drawing on cues from 3Blue1Brown. I knew what positive eigenvalues were meant to do to the surface geometrically, or what the basis transformations did. But when I wanted to solve a problem, I couldn't remember whether $H(x,y)<0$ meant "saddle" or was it $>0$ (or $=0$). Worse still, I realised that I couldn't see a way to figure this out from the things that I knew.
 
-As for higher dimensions, even for $f:\mathbb{R}^2\to\mathbb{R}$, I did the best I could using the visual cues drawn from 3Blue1Brown videos. I knew what positive eigenvalues were meant to do to the surface geometrically, or what the basis transformations did. But when I wanted to solve a real problem, I couldn't remember whether $H(x,y)>0$ meant "saddle" or was it $<0$ (or $=0$). Worse still, I realised that I couldn't figure this out from the things that I could "see" or reason about.
+So here is an attempt to capture a slightly different approach that still lets me reconstruct the conditions without memorisation. I'll also take this one step further, involving notations that I haven't seen before. There might be a geometric view to this as well. But until I know more about quadratic or trilinear forms, this would have to do.
 
-So here is an attempt to capture a slightly different approach that still lets me reconstruct the conditions without memorisation. There might be a geometric view to this as well. But until I know more about quadratic forms, this would have to do.
+### Truncating the Taylor series
+Let's assume that the function we're dealing with is continuously differentiable (we'll discuss on what this means concretely in another post [[INSERT TITLE]]). 
 
-### Taylor series
+To keep things simple, I'll start with the scalar case of $f:U\to\mathbb{R}$, where $U\subseteq\mathbb{R}$ is an open set. Why do we need an open set for the domain? Because we're going to nudge the input and we want to make sure we can do that safely within the domain of $f$.
 
+Around a point $x\in U$, the taylor expansion is
+
+$$
+f(x+h)=f(x)+f'(x)h+\frac{1}{2!}f^{\prime\prime}(x)h^2+\frac{1}{3!}f^{\prime\prime\prime}(x)h^3+\cdots
+$$
+
+For a linear approximation, we take up-to term with the first derivative. Let's use a different letter $g$ for the function that represents this approximation so that we don't mix things up (this is not the same function $f$).
+
+$$
+g(x+h)=f(x)+f'(x)h
+$$
+
+What we have here is an equation of a straight line passing through the point $(x, f(x))$. To see that clearly, let's use $a$ (instead of $x$) as the centre, and reserve $x$ for the nudged input $a+h$, so that we have:
+
+$$
+g(x)=f(a)+f'(a)(x-a)
+$$
+
+Rearranging, we get 
+
+$$
+g(x)-f(a)=f'(a)(x-a)
+$$
+
+which now looks to be in the familiar form of a straight line passing through $(x_1, y_1)$ with a slope $m$.
+
+$$
+y-y_1=m(x-x_1)
+$$
+
+A quick side note: 
+Here is something I also wish I had known earlier. A slight rearrangement makes this straight line equation into a general vector-form equation. The nice thing about that is that it extends easily to higher dimensions.
+
+What is the vector form equation? Say, the line passes through the tip of the vector $\mathbf{r}_0$ (tail at origin). For any arbitrary vector $\mathbf{r}$, one can imagine a difference vector $\mathbf{r}-\mathbf{r}_0$ so that the tail is at $\mathbf{r}_0$ and the tip is at $\mathbf{r}$. This denotes the line we're interested in. Let $\hat{\mathbf{n}}$ be a normal vector to this line (i.e. perpendicular). So, the equation in this form is essentially the orthogonality between these two vectors: 
+
+$$
+(\mathbf{r}-\mathbf{r}_0)\cdot\hat{\mathbf{n}}=0
+$$
+
+For our simple scalar case, the vector can be thought of being made up by 1 input dimension and 1 output dimension. That is, our line is in $\mathbb{R}^2$ made up with points $(x, g(x)$ that must pass through
+
+$$
+\mathbf{r}_0=
+\begin{pmatrix} 
+a \\ 
+f(a) 
+\end{pmatrix}
+$$
+
+Rearranging $g(x)-f(a) &=& f'(a)(x-a)$, we get
+
+$$
+\begin{aligned}
+f'(a)(x-a) - (g(x)-f(a)) &= 0 \\
+\therefore\quad
+\begin{pmatrix}
+f'(a) \\
+-1
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+x-a \\
+g(x)-f(a)
+\end{pmatrix}
+&= 0
+\end{aligned}
+$$
+
+Note that in this entire discussion, we actually didn't need the function to be more than thrice differentiable. So we didn't really need the continuous differentiability, although it allowed us to talk about the Taylor expansion which does make things easier.
 
 - second derivative test for stationary points
 - rules for hessian for the multivariate case
