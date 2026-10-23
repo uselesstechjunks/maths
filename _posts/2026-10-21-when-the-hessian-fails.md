@@ -71,7 +71,7 @@ f(a)
 \end{pmatrix}
 $$
 
-Rearranging $g(x)-f(a) &=& f'(a)(x-a)$, we get
+Rearranging $g(x)-f(a)=f'(a)(x-a)$, we get
 
 $$
 \begin{aligned}
