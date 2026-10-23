@@ -9,7 +9,7 @@ tags:
 ---
 When I first learned about stationary points, I leaned heavily on visualisation. It was sufficient (and fun) for me to imagine that the tangent lines of a function would rotate up or down as we slid along the $x$-axis, depending on how the graph looks at different points. Whenever the tangent became horizontal, we had a stationary point.
 
-The classification of stationary points involved the second derivative test. Fortunately, it also has a geometric explanation. The slope of the tangent line is $f'(x)$, and at stationary points it is $0$. Whether it is a (local) maximum or a minimum depends on how the slope changes as we move from left to right on the $x$-axis passing through that point.
+The classification of stationary points involved the second derivative test. Fortunately for me, it also has a geometric explanation. The slope of the tangent line is $f'(x)$, and at stationary points it is $0$. Whether it is a (local) maximum or a minimum depends on how the slope changes as we move from left to right on the $x$-axis passing through that point.
 
 A nice thing about these intuitions is that I never had to memorise the particulars of things I needed to use. I would call upon an image of a smooth-looking graph around its minimum and deduce that if we moved from $(x-h)$ to $x$ to $(x+h)$, the slope of the tangent must go from negative (line leaning left) to 0 and then to positive (line leaning right). Therefore, the second derivative must be increasing with $x$, which implied that the correct test for a local minimum must be $f''(x)>0$ (and $f''(x)<0$ for the maximum, by extension).
 
