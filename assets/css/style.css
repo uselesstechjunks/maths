@@ -1,5 +1,5 @@
-:root {
-  color-scheme: light dark;
+:root[data-theme="light"] {
+  color-scheme: light;
   --bg: #faf9f6;
   --surface: #f0eee8;
   --text: #252820;
@@ -10,17 +10,16 @@
   --code-bg: #eeede7;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #191b19;
-    --surface: #222522;
-    --text: #e5e5dc;
-    --muted: #a5a89d;
-    --link: #a7c9b5;
-    --border: #393d38;
-    --tag-bg: #2b352e;
-    --code-bg: #242724;
-  }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #101110;
+  --surface: #191b19;
+  --text: #e8e8e0;
+  --muted: #a0a49b;
+  --link: #a8cdb7;
+  --border: #30342f;
+  --tag-bg: #202820;
+  --code-bg: #191c19;
 }
 
 * {
