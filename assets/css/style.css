@@ -233,7 +233,121 @@ td {
   font-size: 0.82rem;
 }
 
+.home-intro {
+  padding: 2.5rem 0 3.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+  color: var(--muted);
+  font: 0.72rem/1.5 Arial, sans-serif;
+  letter-spacing: 0.14em;
+}
+
+.home-intro h1 {
+  max-width: 620px;
+  margin: 1.5rem 0 1rem;
+  font-size: clamp(2.7rem, 7vw, 4.3rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.intro-text {
+  max-width: 540px;
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.notes-section {
+  padding-top: 1.5rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.section-heading h2 {
+  margin: 0 0 1rem;
+  font-size: 1.7rem;
+}
+
+.section-heading span {
+  color: var(--muted);
+  font: 0.8rem Arial, sans-serif;
+}
+
+.note {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr) 24px;
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.note-date {
+  padding-top: 0.35rem;
+  color: var(--muted);
+  font: 0.78rem/1.6 Arial, sans-serif;
+}
+
+.note-main h3 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.note-main h3 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.note-main h3 a:hover {
+  color: var(--link);
+}
+
+.note-excerpt {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.note-excerpt p {
+  margin: 0;
+}
+
+.note-arrow {
+  align-self: center;
+  color: var(--muted);
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.note-arrow:hover {
+  color: var(--link);
+}
+
 @media (max-width: 600px) {
+  .home-intro {
+    padding: 1.5rem 0 2.5rem;
+  }
+
+  .note {
+    grid-template-columns: 1fr 24px;
+    gap: 0.5rem;
+  }
+
+  .note-date {
+    grid-column: 1 / -1;
+  }
+
+  .note-main h3 {
+    font-size: 1.2rem;
+  }
+  
   html {
     font-size: 16px;
   }
