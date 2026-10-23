@@ -13,7 +13,7 @@ The classification of stationary points involving the second derivative test als
 
 A nice thing about these intuitions is that I never had to memorise the particulars of the tests involving the second derivatives. I would call upon an image of a smooth-looking graph around its minimum and deduce that if we moved from $(x-h)$ to $x$ to $(x+h)$, the slope must go from negative (line leaning left) to 0 and then to positive (line leaning right). Therefore, the second derivative must be increasing with $x$, which implied that the correct test for a local minimum must be $f"(x)>0$ (and $f"(x)<0$ for the maximum, by extension).
 
-I could never explain (or, pay much attention to) the $f"(x)=0$ case though, except for the trivial cases of either a constant ($f(x)=c$) or an affine function ($f(x)=mc+c$) where the slope never changes. I never understood what happens at $x=0$ for $f(x)=x^4$, and how it is different from $f(x)=x^3$.
+I could never explain (or, pay much attention to) the $f"(x)=0$ case though, except for the trivial cases of either a constant ($f(x)=c$) or an affine function ($f(x)=mx+c$) where the slope never changes. I never understood what happens at $x=0$ for $f(x)=x^4$, and how it is different from $f(x)=x^3$.
 
 The limitation of an animation-based reconstruction technique is that it is only as good as our imagination, which gets increasingly poorer as we move up in dimensions. For example, even for $f:\mathbb{R}^2\to\mathbb{R}$, 
 
