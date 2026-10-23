@@ -330,6 +330,88 @@ td {
   color: var(--link);
 }
 
+.notes-layout {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.notes-sidebar {
+  position: sticky;
+  top: 1.5rem;
+}
+
+.filter-group {
+  margin-bottom: 2rem;
+}
+
+.filter-group h3 {
+  margin: 0 0 0.7rem;
+  font: 600 0.75rem/1.4 Arial, sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.filter-button {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.4rem 0.55rem;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.88rem;
+}
+
+.filter-button:hover,
+.filter-button.active {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.filter-button.active {
+  box-shadow: inset 2px 0 var(--link);
+}
+
+.filter-button span {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.tag-filter {
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+.tag-filter:hover {
+  color: var(--text);
+  border-color: var(--link);
+}
+
+.note[hidden] {
+  display: none;
+}
+
+@media (max-width: 650px) {
+  .notes-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .notes-sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 600px) {
   .home-intro {
     padding: 1.5rem 0 2.5rem;
