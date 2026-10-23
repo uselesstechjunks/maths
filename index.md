@@ -7,7 +7,7 @@ title: Home
   <p class="eyebrow">MATHEMATICS · NOTES · EXPLORATIONS</p>
   <h1>Thinking through mathematics.</h1>
   <p class="intro-text">
-    Write-ups on mathematical topics that I think I understand, and those I am still trying to understand.
+    Write-ups on mathematical topics that I think I understand or I don't and I am trying to understand ~
   </p>
 </section>
 
