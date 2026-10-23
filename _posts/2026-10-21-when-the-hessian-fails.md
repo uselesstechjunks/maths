@@ -7,7 +7,6 @@ tags:
   - optimisation
   - taylor series
 ---
-# The Geometric View in 1D
 When I first learnt about stationary points, I leaned heavily on visualisation. It was sufficient to imagine that the tangent lines at different points of a function would rotate around, up-or-down, depending on how the graph looks, as we slide along the x-axis. Whenever the tangent becomes horizontal, we have a stationary point $(x, f(x))$.
 
 The idea involving second derivative test is also geometric. The slope of the tangent line is $f'(x)$, and at stationary points it is $0$. Whether it is a (local) maximum or a minimum depends on how the slope changes as we move left to right on the x-axis.
