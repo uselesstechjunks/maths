@@ -1,5 +1,5 @@
 markdown: kramdown
-
+title: Maths
 kramdown:
   math_engine: mathjax
   input: GFM
