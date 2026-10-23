@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "When Hessian Fails"
+title: "When the Hessian fails"
 date: 2026-10-21
 tags:
   - calculus
