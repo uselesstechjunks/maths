@@ -16,7 +16,7 @@ $$
 y(x) - y(a) = m(x - a)
 $$
 
-It follows from $y(x)=mx+c$ and making $(a,f(a))$ satisfying this equation (I do this calculation explicitly for the $\mathbb{R}^2$ case).
+It follows from $y(x)=mx+c$ and making $(a,y(a))$ satisfying this equation (I do this calculation explicitly for the $\mathbb{R}^2$ case).
 
 When $m=0$, the equation reduces to $y(x)=f(a)$, which is parallel to the $x$-axis.
 
