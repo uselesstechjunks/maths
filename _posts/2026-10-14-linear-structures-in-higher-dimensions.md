@@ -58,15 +58,15 @@ $$
 (\mathbf{r}-\mathbf{r}_0)\cdot\hat{\mathbf{n}}=0
 $$
 
-Now, looking back at our original equation, we rearrange $y(x)-f(a)=m(x-a)$ to get
+Now, looking back at our original equation, we rearrange $y(x)-y(a)=m(x-a)$ to get
 
 $$
 \begin{aligned}
-m(x-a) - (y(x)-f(a)) &= 0 \\
+m(x-a) - (y(x)-y(a)) &= 0 \\
 \therefore\quad
 \begin{pmatrix}
 x-a \\
-y(x)-f(a)
+y(x)-y(a)
 \end{pmatrix}
 \cdot
 \begin{pmatrix}
@@ -86,27 +86,27 @@ m \\
 \end{pmatrix}
 $$
 
-that always point downwards, and how far or which direction in the $x$-axis it points to is completely determined by its slope. Since the slope stays constant for straight lines, we can compute $f'(x)$ at any point (say, at $a$), and use $m=f'(a)$ throughout.
+that always point downwards, and how far or which direction in the $x$-axis it points to is completely determined by its slope. Since the slope stays constant for straight lines, we can compute $y'(x)$ at any point (say, at $a$), and use $m=y'(a)$ throughout.
 
 $$
-\hat{\mathbf{n}}=\begin{pmatrix}f'(a)\\ 
+\hat{\mathbf{n}}=\begin{pmatrix}y'(a)\\ 
 -1\end{pmatrix}
 $$
 
 ### Planes in 2D
-For general equation of planes, we recall that any map $f:(x,y)\in\mathbb{R}^2\mapsto z\in\mathbb{R}$ must follow that $z=f(x,y)=mx+ny+c$ for some $m,n,c$.
+For general equation of planes, we recall that any map $z:(x,y)\in\mathbb{R}^2\mapsto z\in\mathbb{R}$ must follow that $z=z(x,y)=mx+ny+c$ for some $m,n,c$.
 
-We need this to pass through some specific point $(a,b,f(a,b))\in\mathbb{R}^3$. Since I don't remember what the equation needed to be, let me derive it here.
+We need this to pass through some specific point $(a,b,z(a,b))\in\mathbb{R}^3$. Since I don't remember what the equation needed to be, let me derive it here.
 
 $$
 \begin{align}
-f(a,b)=ma+nb+c\implies c=f(a,b)-ma-nb \\
-\therefore f(x,y)=mx+ny+(f(a,b)-ma-nb)\\
-\therefore
+z(a,b)=ma+nb+c\implies c=z(a,b)-ma-nb \\
+\therefore\quad z(x,y)=mx+ny+(z(a,b)-ma-nb)\\
+\therefore\quad
 \begin{pmatrix}
 x-a \\
 y-b \\
-f(x,y)-f(a,b)
+z(x,y)-z(a,b)
 \end{pmatrix}\cdot
 \begin{pmatrix}
 m\\
@@ -117,12 +117,12 @@ n\\
 \end{align}
 $$
 
-Now we see a pattern forming. If we follow from the equation, we can derive directly that $f_x=\frac{\partial f}{\partial x}=m$ and $f_y=\frac{\partial f}{\partial y}=n$. So, the normal to this plane actually is
+Now we see a pattern forming. If we follow from the equation, we can derive directly that $z_x=\frac{\partial z}{\partial x}=m$ and $z_y=\frac{\partial z}{\partial y}=n$. So, the normal to this plane actually is
 
 $$
 \hat{\mathbf{n}}=\begin{pmatrix}
-f_x\\ 
-f_y\\
+z_x\\ 
+z_y\\
 -1\end{pmatrix}
 $$
 
@@ -130,7 +130,7 @@ or, with a little abuse of notation
 
 $$
 \begin{pmatrix}
-\nabla f\\
+\nabla z\\
 -1
 \end{pmatrix}
 $$
@@ -170,7 +170,32 @@ $$
 Not exactly what we were looking for. It points to the opposite direction of the normal we had earlier. But that just means I might be missing the right convention somewhere. Instead of pretending that it's not bothering me, let me keep it here lingering so that I come back to it someday.
 
 ### Hyperplanes
-For general hyperplanes $f:\mathbb{R}^n\to\mathbb{R}$, we can safely extend this in proper vector notation:
+For general hyperplanes $y:\mathbb{R}^n\to\mathbb{R}$, we can extend this. For explicit component-by-component view, the linear hyperplanes have the form
+
+$$
+y(x_1,x_2,\cdots,x_n)=c+\sum_{k=1}^n m_kx_k
+$$
+
+When constrained to pass through a specific point $(a_1,a_2,\cdots,a_n)$, the equation we have is
+
+$$
+\begin{pmatrix}
+x_1-a_1 \\
+x_2-a_2 \\
+\vdots \\
+x_n-a_n \\
+y(x_1,x_2,\cdots,x_n)-y(a_1,a_2,\cdots,a_n)
+\end{pmatrix}\cdot
+\begin{pmatrix}
+m_1 \\
+m_2 \\
+\vdots \\
+m_n \\
+-1
+\end{pmatrix}=0
+$$
+
+In the vector view $\mathbf{x}=(x_1,x_2,\cdots,x_n)^\top$, we can abuse the notation again
 
 $$
 \begin{pmatrix}
@@ -186,5 +211,5 @@ $$
 This simply rearranges into
 
 $$
-y(\mathbf{x})=y(\mathbf{a})+\nabla y(\mathbf{a})(\mathbf{x}-\mathbf{a})
+y(\mathbf{x})=y(\mathbf{a})+\nabla y(\mathbf{a})\cdot(\mathbf{x}-\mathbf{a})
 $$
