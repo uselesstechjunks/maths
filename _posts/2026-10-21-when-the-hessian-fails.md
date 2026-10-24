@@ -20,7 +20,9 @@ So here is an attempt to capture a slightly different approach that still lets m
 ### Truncating the Taylor series
 Let's assume that the function we're dealing with is continuously differentiable (we'll discuss on what this means concretely in another post [[INSERT TITLE]]). 
 
-To keep things simple, I'll start with the scalar case of $f:U\to\mathbb{R}$, where $U\subseteq\mathbb{R}$ is an open set. Why do we need an open set for the domain? Because we're going to nudge the input and we want to make sure we can do that safely within the domain of $f$.
+To keep things simple, I'll start with the scalar case of $f:U\to\mathbb{R}$, where $U\subseteq\mathbb{R}$ is an open set. 
+
+Why do we need an open set for the domain? Because we're going to nudge the input and we need to make sure we can do that safely within the domain of $f$.
 
 Around a point $x\in U$, the taylor expansion is
 
@@ -28,40 +30,37 @@ $$
 f(x+h)=f(x)+f'(x)h+\frac{1}{2!}f^{\prime\prime}(x)h^2+\frac{1}{3!}f^{\prime\prime\prime}(x)h^3+\cdots
 $$
 
-For a linear approximation, we take up-to term with the first derivative. Let's use a different letter $g$ for the function that represents this approximation so that we don't mix things up (this is not the same function $f$).
+For a linear approximation, we take up-to term with the first derivative. Let's use a different letter $y$ for the function that represents this approximation so that we don't mix things up (this is not the same function $f$).
 
 $$
-g(x+h)=f(x)+f'(x)h
+y(x+h)=f(x)+f'(x)h
 $$
 
-What we have here is an equation of a straight line passing through the point $(x, f(x))$. To see that clearly, let's use $a$ (instead of $x$) as the centre, and reserve $x$ for the nudged input $a+h$, so that we have:
+Although it might not be immediately apparent, what we have here is an equation of a straight line passing through the point $(x, f(x))$. To see that clearly, let's use $a$ (instead of $x$) as the centre of the expansion, and reserve $x$ for the nudged input $a+h$, so that we have:
 
 $$
-g(x)=f(a)+f'(a)(x-a)
+\begin{aligned}
+y(x)&=f(a)+f'(a)(x-a) \\
+\therefore\quad y(x)-f(a)&=f'(a)(x-a)
+\end{aligned}
 $$
 
-Rearranging, we get 
+which now looks to be in the more familiar form of a straight line passing through $(a, b)$ with a slope $m$.
 
 $$
-g(x)-f(a)=f'(a)(x-a)
-$$
-
-which now looks to be in the familiar form of a straight line passing through $(x_1, y_1)$ with a slope $m$.
-
-$$
-y-y_1=m(x-x_1)
+y-b=m(x-a)
 $$
 
 A quick side note: 
-Here is something I also wish I had known earlier. A slight rearrangement makes this straight line equation into a general vector-form equation. The nice thing about that is that it extends easily to higher dimensions.
+Here is something I also wish I had known earlier. A slight rearrangement makes this into a general vector-form equation. The nice thing about that is that it extends to higher dimensions.
 
-What is the vector form equation? Say, the line passes through the tip of the vector $\mathbf{r}_0$ (tail at origin). For any arbitrary vector $\mathbf{r}$, one can imagine a difference vector $\mathbf{r}-\mathbf{r}_0$ so that the tail is at $\mathbf{r}_0$ and the tip is at $\mathbf{r}$. This denotes the line we're interested in. Let $\hat{\mathbf{n}}$ be a normal vector to this line (i.e. perpendicular). So, the equation in this form is essentially the orthogonality between these two vectors: 
+What is the vector form equation? Say, the line passes through the tip of the vector $\mathbf{r}_0$ (tail at origin). For any arbitrary vector $\mathbf{r}$, one can imagine the difference vector $\mathbf{r}-\mathbf{r}_0$ (tail at $\mathbf{r}_0$, tip at $\mathbf{r}$) to be the line. Let $\hat{\mathbf{n}}$ be a normal vector to this line (i.e. perpendicular). The equation in this form is essentially the orthogonality between these two vectors:
 
 $$
 (\mathbf{r}-\mathbf{r}_0)\cdot\hat{\mathbf{n}}=0
 $$
 
-For our simple scalar case, the vector can be thought of being made up by 1 input dimension and 1 output dimension. That is, our line is in $\mathbb{R}^2$ made up with points $(x, g(x)$ that must pass through
+For our simple scalar case, the vector is made up by 1 input dimension and 1 output dimension. That is, our line is in $\mathbb{R}^2$ made up with points $(x, g(x))$ that must pass through
 
 $$
 \mathbf{r}_0=
@@ -78,16 +77,24 @@ $$
 f'(a)(x-a) - (g(x)-f(a)) &= 0 \\
 \therefore\quad
 \begin{pmatrix}
-f'(a) \\
--1
+x-a \\
+y(x)-f(a)
 \end{pmatrix}
 \cdot
 \begin{pmatrix}
-x-a \\
-g(x)-f(a)
+f'(a) \\
+-1
 \end{pmatrix}
 &= 0
 \end{aligned}
+$$
+
+When $f'(a)=0$, the equation reduces to $y(x)=f(a)$, which is parallel to the $x$-axis.
+
+Here is the interesting point. If we use $f'(x)=0$ in the Taylor expansion, the equation becomes
+
+$$
+f(x+h)=f(x)+\cancelto{0}{f'(x)h}+\frac{1}{2!}f^{\prime\prime}(x)h^2+\frac{1}{3!}f^{\prime\prime\prime}(x)h^3+\cdots
 $$
 
 Note that in this entire discussion, we actually didn't need the function to be more than thrice differentiable. So we didn't really need the continuous differentiability, although it allowed us to talk about the Taylor expansion which does make things easier.
