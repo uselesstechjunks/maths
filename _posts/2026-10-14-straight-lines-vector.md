@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Linear Structures in Vector Form"
+title: "Linear Structures in Higher Dimensions"
 date: 2026-10-14
 tags:
   - geometry
