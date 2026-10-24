@@ -177,7 +177,7 @@ $$
 y(\mathbf{x})-y(\mathbf{a})
 \end{pmatrix}\cdot
 \begin{pmatrix}
-\nabla_\mathbf{x}(\mathbf{a}) \\
+\nabla y(\mathbf{a}) \\
 -1
 \end{pmatrix}=0
 $$
@@ -185,5 +185,5 @@ $$
 This simply rearranges into
 
 $$
-y(\mathbf{x})=y(\mathbf{a})+\nabla_\mathbf{x}(\mathbf{a})(\mathbf{x}-\mathbf{a})
+y(\mathbf{x})=y(\mathbf{a})+\nabla y(\mathbf{a})(\mathbf{x}-\mathbf{a})
 $$
