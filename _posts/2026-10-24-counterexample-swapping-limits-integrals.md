@@ -12,7 +12,7 @@ tags:
 
 When dealing with limits over integrals involving a sequence of functions, it's tempting to swap the integrals and limits to make things easier. 
 
-To make things concrete, let's assume that we have a sequence of functions $(f_n(x))_{n=0}^\infty$, $f_n:F\to\mathbb{R}$ with $F$ being some closed set. The integral we're interested in is 
+Let's assume that we have a sequence of functions $(f_n(x))_{n=0}^\infty$, $f_n:F\to\mathbb{R}$ with $F$ being some closed set. The quantity we're interested in is 
 
 $$
 \lim\limits_{n\to\infty}\left(\int\limits_0^t f_n(x)\mathrm{dx}\right)
