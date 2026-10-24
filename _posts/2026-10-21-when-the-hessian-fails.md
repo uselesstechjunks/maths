@@ -73,39 +73,39 @@ Note that in this entire discussion, we actually didn't need the function to be 
 
 [^1]: Here is something I also wish I had known earlier. A slight rearrangement makes this into a general vector-form equation. The nice thing about that is that it extends to higher dimensions.
 
-What is the vector form equation? Say, the line passes through the tip of the vector $\mathbf{r}_0$ (tail at origin). For any arbitrary vector $\mathbf{r}$, one can imagine the difference vector $\mathbf{r}-\mathbf{r}_0$ (tail at $\mathbf{r}_0$, tip at $\mathbf{r}$) to be the line. Let $\hat{\mathbf{n}}$ be a normal vector to this line (i.e. perpendicular). The equation in this form is essentially the orthogonality between these two vectors:
+    What is the vector form equation? Say, the line passes through the tip of the vector $\mathbf{r}_0$ (tail at origin). For any arbitrary vector $\mathbf{r}$, one can imagine the difference vector $\mathbf{r}-\mathbf{r}_0$ (tail at $\mathbf{r}_0$, tip at $\mathbf{r}$) to be the line. Let $\hat{\mathbf{n}}$ be a normal vector to this line (i.e. perpendicular). The equation in this form is essentially the orthogonality between these two vectors:
 
-$$
-(\mathbf{r}-\mathbf{r}_0)\cdot\hat{\mathbf{n}}=0
-$$
+    $$
+    (\mathbf{r}-\mathbf{r}_0)\cdot\hat{\mathbf{n}}=0
+    $$
 
-For our simple scalar case, the vector is made up by 1 input dimension and 1 output dimension. That is, our line is in $\mathbb{R}^2$ made up with points $(x, g(x))$ that must pass through
+    For our simple scalar case, the vector is made up by 1 input dimension and 1 output dimension. That is, our line is in $\mathbb{R}^2$ made up with points $(x, g(x))$ that must pass through
 
-$$
-\mathbf{r}_0=
-\begin{pmatrix} 
-a \\ 
-f(a) 
-\end{pmatrix}
-$$
+    $$
+    \mathbf{r}_0=
+    \begin{pmatrix} 
+    a \\ 
+    f(a) 
+    \end{pmatrix}
+    $$
 
-Rearranging $g(x)-f(a)=f'(a)(x-a)$, we get
+    Rearranging $g(x)-f(a)=f'(a)(x-a)$, we get
 
-$$
-\begin{aligned}
-f'(a)(x-a) - (g(x)-f(a)) &= 0 \\
-\therefore\quad
-\begin{pmatrix}
-x-a \\
-y(x)-f(a)
-\end{pmatrix}
-\cdot
-\begin{pmatrix}
-f'(a) \\
--1
-\end{pmatrix}
-&= 0
-\end{aligned}
-$$
+    $$
+    \begin{aligned}
+    f'(a)(x-a) - (g(x)-f(a)) &= 0 \\
+    \therefore\quad
+    \begin{pmatrix}
+    x-a \\
+    y(x)-f(a)
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+    f'(a) \\
+    -1
+    \end{pmatrix}
+    &= 0
+    \end{aligned}
+    $$
 
-When $f'(a)=0$, the equation reduces to $y(x)=f(a)$, which is parallel to the $x$-axis.
+    When $f'(a)=0$, the equation reduces to $y(x)=f(a)$, which is parallel to the $x$-axis.
