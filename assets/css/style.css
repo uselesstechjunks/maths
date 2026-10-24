@@ -1,4 +1,3 @@
-
 :root[data-theme="light"] {
   color-scheme: light;
   --bg: #faf9f6;
@@ -502,6 +501,20 @@ th {
 
 .MathJax {
   max-width: 100%;
+}
+
+/* Footnotes */
+.footnotes {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.footnotes p {
+  margin: 0.4rem 0;
+}
+
+sup.footnote {
+  font-size: 0.75em;
 }
 
 /* Tablet and mobile */
