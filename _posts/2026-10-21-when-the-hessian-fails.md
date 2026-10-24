@@ -45,13 +45,31 @@ y(x)&=f(a)+f'(a)(x-a) \\
 \end{aligned}
 $$
 
-which now looks to be in the more familiar form of a straight line passing through $(a, b)$ with a slope $m$.
+which now looks to be in the more familiar form of a straight line passing through $(a, b)$ with a slope $m$. [^1]
 
 $$
 y-b=m(x-a)
 $$
 
-A quick side note: 
+Here is the interesting point. If we use $f'(x)=0$ in the Taylor expansion, the equation becomes
+
+$$
+f(x+h)=f(x)+\cancelto{0}{f'(x)h}+\frac{1}{2!}f^{\prime\prime}(x)h^2+\frac{1}{3!}f^{\prime\prime\prime}(x)h^3+\cdots
+$$
+
+Note that in this entire discussion, we actually didn't need the function to be more than thrice differentiable. So we didn't really need the continuous differentiability, although it allowed us to talk about the Taylor expansion which does make things easier.
+
+- second derivative test for stationary points
+- rules for hessian for the multivariate case
+- geometric intuition in 1d
+- analytical reasoning in 1d > taylor > 
+- analytical reasoning in 2d
+- geometric intuition in 2d
+- counterexample: hessian null space vectors
+- what's happening there
+- third term in taylor series
+
+[^1]
 Here is something I also wish I had known earlier. A slight rearrangement makes this into a general vector-form equation. The nice thing about that is that it extends to higher dimensions.
 
 What is the vector form equation? Say, the line passes through the tip of the vector $\mathbf{r}_0$ (tail at origin). For any arbitrary vector $\mathbf{r}$, one can imagine the difference vector $\mathbf{r}-\mathbf{r}_0$ (tail at $\mathbf{r}_0$, tip at $\mathbf{r}$) to be the line. Let $\hat{\mathbf{n}}$ be a normal vector to this line (i.e. perpendicular). The equation in this form is essentially the orthogonality between these two vectors:
@@ -90,21 +108,3 @@ f'(a) \\
 $$
 
 When $f'(a)=0$, the equation reduces to $y(x)=f(a)$, which is parallel to the $x$-axis.
-
-Here is the interesting point. If we use $f'(x)=0$ in the Taylor expansion, the equation becomes
-
-$$
-f(x+h)=f(x)+\cancelto{0}{f'(x)h}+\frac{1}{2!}f^{\prime\prime}(x)h^2+\frac{1}{3!}f^{\prime\prime\prime}(x)h^3+\cdots
-$$
-
-Note that in this entire discussion, we actually didn't need the function to be more than thrice differentiable. So we didn't really need the continuous differentiability, although it allowed us to talk about the Taylor expansion which does make things easier.
-
-- second derivative test for stationary points
-- rules for hessian for the multivariate case
-- geometric intuition in 1d
-- analytical reasoning in 1d > taylor > 
-- analytical reasoning in 2d
-- geometric intuition in 2d
-- counterexample: hessian null space vectors
-- what's happening there
-- third term in taylor series
