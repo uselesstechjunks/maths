@@ -2,7 +2,7 @@
 layout: post
 title: "On Non-Necessity of Laplace Transform Conditions"
 date: 2026-10-14
-slug: linear-structures
+slug: counterexample-for-laplace-conditions
 tags:
   - transforms
   - calculus
