@@ -41,7 +41,7 @@ $$
 ### An Example
 When would we have such a situation? A useful example is the $\log$-series expansion (or, any power series expansion). The trick seems to work here.
 
-Let's start with the power series expansion. This formula can easily be proven by algebra. If we start with $S=\sum_{n=0}^\infty x^n$ for $\vert x\vert < 1$, we have $Sx=S-1\implies S=\frac{1}{1-x}$.
+Let's start with the power series expansion. This formula can easily be proven by algebra. If we start with $S=\sum_{n=0}^\infty x^n$ for $\vert x\vert < 1$, we have $Sx=S+1\implies S=\frac{1}{1-x}$.
 
 This can immediately help recover the log-series. Integrating both sides we get
 
