@@ -7,11 +7,11 @@ tags:
   - optimisation
   - taylor series
 ---
-I wrote a rather long motivation for this post which I've since pushed to footnotes.[^1]
+I wrote a rather long motivation for this post which I've since pushed to the footnotes.[^1] as I realised that it's slightly orthogonal. It is still a useful reminder for me on why I started writing in the first place. For the reader, it might explain what I am trying to achieve here. However, the discussion below doesn't borrow anything from there. We can jump right in.
 
-Let's assume that the function we're dealing with is continuously differentiable (see [[THIS POST]] for more details on continuous differentiability).
+Let's assume that we're dealing with a function that is continuously differentiable (see [[THIS POST]] for more details on continuous differentiability).
 
-To keep things simple, I'll start with the scalar case of $f:U\to\mathbb{R}$, where $U\subseteq\mathbb{R}$ is an open set. Why do we need an open set for the domain? Because we're going to nudge the input and we need to make sure we can do that safely within the domain of $f$.
+To keep things simple, I'll start with the scalar case of $f:U\to\mathbb{R}$, where $U\subseteq\mathbb{R}$ is an open set. Why do we need an open set for the domain? Because we're going to nudge the input and we need to make sure we can do that safely staying within the domain of $f$.
 
 Around a point $x\in U$, the Taylor expansion is
 
@@ -21,7 +21,7 @@ $$
 
 This converges as long as $h$ is within its radius of convergence. See [[THIS POST]] for more details on Taylor expansion.
 
-For a linear approximation, we take up-to the term with the first derivative. Let's use a different letter $y$ for the function that represents this approximation so that we don't mix things up (since this is clearly not the same function $f$).
+For a linear approximation, we truncate after the first derivative term. I'll use a different letter $y$ for the function that represents this approximation so that we don't mix things up (this is not the same function as $f$).
 
 $$
 y(x+h)=f(x)+f'(x)h
@@ -42,11 +42,27 @@ $$
 y-b=m(x-a)
 $$
 
-Here is the interesting point. If we use $f'(x)=0$ in the Taylor expansion, the equation becomes
+Now, onto the the interesting part. At stationary points, if we use $f'(x)=0$ into the Taylor expansion, the equation becomes
 
 $$
 f(x+h)=f(x)+\cancelto{0}{f'(x)h}+\frac{1}{2!}f^{\prime\prime}(x)h^2+\frac{1}{3!}f^{\prime\prime\prime}(x)h^3+\cdots
 $$
+
+Now, in order for $f$ to have a minima at $x$, we must have $f(x+h) > f(x)$ even when the limit $\lim\limits_{h\to 0}\frac{f(x+h)-f(x)}{h}=0$. This implies
+
+$$
+\left(\frac{1}{2!}f^{\prime\prime}(x)h^2+\frac{1}{3!}f^{\prime\prime\prime}(x)h^3+\cdots\right) >0
+$$
+
+For any $h\in\mathbb{R}$, $h^2>0$. Also, since it's a stationary point, we must have $h\to 0$.
+
+Let's consider the case where $h>0$. If we have $f^{\prime\prime}(x)>0$, the above equation is satisfied. What about $h<0$? The above still is satisfied as long as $f^{\prime\prime}(x)>0$ if 
+
+$$
+\frac{1}{2!}f^{\prime\prime}(x)\vert h\vert^2>\frac{1}{3!}f^{\prime\prime\prime}(x)\vert h\vert^3+\frac{1}{4!}f^{\prime\prime\prime}(x)\vert h\vert^4+\cdots
+$$
+
+This also clarifies another thing: while having $f^{\prime\prime}(x)>0$ is sufficient, it is not necessary. 
 
 Note that in this entire discussion, we actually didn't need the function to be more than thrice differentiable. So we didn't really need the continuous differentiability, although it allowed us to talk about the Taylor expansion which does make things easier.
 
