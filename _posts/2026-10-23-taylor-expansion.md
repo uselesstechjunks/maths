@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Vanishing Errors with Taylor Approximation for Tiny Changes"
-date: 2026-10-24
+date: 2026-10-23
 slug: taylor-approximation
 tags:
   - series
