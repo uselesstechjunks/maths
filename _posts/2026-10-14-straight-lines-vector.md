@@ -182,7 +182,7 @@ y(\mathbf{x})-y(\mathbf{a})
 \end{pmatrix}=0
 $$
 
-Note that this just rearranges to the linear approximation from the Taylor expansion around $\mathbf{a}$
+This simply rearranges into
 
 $$
 y(\mathbf{x})=y(\mathbf{a})+\nabla_\mathbf{x}(\mathbf{a})(\mathbf{x}-\mathbf{a})
