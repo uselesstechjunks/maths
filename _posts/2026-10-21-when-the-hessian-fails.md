@@ -7,13 +7,11 @@ tags:
   - optimisation
   - taylor series
 ---
-I wrote a rather long background and motivation for this post which I've since pushed to footnotes.[^1]
+I wrote a rather long motivation for this post which I've since pushed to footnotes.[^1]
 
 Let's assume that the function we're dealing with is continuously differentiable (see [[THIS POST]] for more details on continuous differentiability).
 
-To keep things simple, I'll start with the scalar case of $f:U\to\mathbb{R}$, where $U\subseteq\mathbb{R}$ is an open set. 
-
-Why do we need an open set for the domain? Because we're going to nudge the input and we need to make sure we can do that safely within the domain of $f$.
+To keep things simple, I'll start with the scalar case of $f:U\to\mathbb{R}$, where $U\subseteq\mathbb{R}$ is an open set. Why do we need an open set for the domain? Because we're going to nudge the input and we need to make sure we can do that safely within the domain of $f$.
 
 Around a point $x\in U$, the Taylor expansion is
 
@@ -21,9 +19,9 @@ $$
 f(x+h)=f(x)+f'(x)h+\frac{1}{2!}f^{\prime\prime}(x)h^2+\frac{1}{3!}f^{\prime\prime\prime}(x)h^3+\cdots
 $$
 
-This converges as long as the nudge $h$ keeps it within its radius of convergence. See [[THIS POST]] for more details on Taylor expansion.
+This converges as long as $h$ is within its radius of convergence. See [[THIS POST]] for more details on Taylor expansion.
 
-For a linear approximation, we take up-to term with the first derivative. Let's use a different letter $y$ for the function that represents this approximation so that we don't mix things up (this is not the same function $f$).
+For a linear approximation, we take up-to the term with the first derivative. Let's use a different letter $y$ for the function that represents this approximation so that we don't mix things up (since this is clearly not the same function $f$).
 
 $$
 y(x+h)=f(x)+f'(x)h
@@ -38,7 +36,7 @@ y(x)&=f(a)+f'(a)(x-a) \\
 \end{aligned}
 $$
 
-which now looks to be in the more familiar form of a straight line passing through $(a, b)$ with a slope $m$. [^2]
+which now looks more familiar for a straight line passing through $(a, b)$ with a slope $m$. [^2]
 
 $$
 y-b=m(x-a)
