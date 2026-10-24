@@ -30,6 +30,8 @@ $$
 f(x+h)=f(x)+f'(x)h+\frac{1}{2!}f^{\prime\prime}(x)h^2+\frac{1}{3!}f^{\prime\prime\prime}(x)h^3+\cdots
 $$
 
+This converges as long as our judge keeps it within its radius of convergence.
+
 For a linear approximation, we take up-to term with the first derivative. Let's use a different letter $y$ for the function that represents this approximation so that we don't mix things up (this is not the same function $f$).
 
 $$
