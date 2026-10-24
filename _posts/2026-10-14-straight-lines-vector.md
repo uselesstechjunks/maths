@@ -31,7 +31,7 @@ Now, here is the trick: a slight rearrangement makes this into a general vector-
 
 What is the vector form equation of a straight line? 
 
-#### Vector form in 1D
+### Vector form in 1D
 For the moment, let's stick with scalar functions (and therefore, graphs of these functions in $\mathbb{R}^2$). The vectors we naturally have here are in the form 
 
 $$
@@ -92,7 +92,7 @@ $$
 -1\end{pmatrix}
 $$
 
-#### Planes in 2D
+### Planes in 2D
 For general equation of planes, we recall that any map $f:(x,y)\in\mathbb{R}^2\mapsto z\in\mathbb{R}$ must follow that $z=f(x,y)=mx+ny+c$ for some $m,n,c$.
 
 We need this to pass through some specific point $(a,b,f(a,b))\in\mathbb{R}^3$. Since I don't remember what the equation needed to be, let me derive it here.
@@ -134,7 +134,7 @@ $$
 \end{pmatrix}
 $$
 
-#### The cross product view
+### The cross product view
 Let's consider 2 vectors on the plane $z=mx+ny+c$. We first consider straight lines on that plane. The simplest 2 we can think of are along the axes. For $x=0$ (along the $y$-axis), we have $z=ny+c$ and for $y=0$ (along the $x$-axis), we have $z=mx+c$. 
 
 These lines are parallel to $z=ny$ and $z=mx$, respectively (lines passing through origin). So, if we think of vectors along these lines (tails at origin, heads at somewhere on the lines), those vectors are identical to the ones we're looking for.
@@ -168,7 +168,7 @@ $$
 
 Not exactly what we were looking for. It points to the opposite direction of the normal we had earlier. But that just means I might be missing the right convention somewhere. Instead of pretending that it's not bothering me, let me keep it here lingering so that I come back to it someday.
 
-#### Hyperplanes
+### Hyperplanes
 For general hyperplanes $f:\mathbb{R}^n\to\mathbb{R}$, we can safely extend this in proper vector notation:
 
 $$
