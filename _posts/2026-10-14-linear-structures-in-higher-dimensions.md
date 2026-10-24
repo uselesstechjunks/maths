@@ -48,14 +48,14 @@ In this form, as for the constraint, the trajectory must pass through the tip of
 
 For any arbitrary vector $\mathbf{r}$, we consider the difference vector $\mathbf{r}-\mathbf{r}_0$ (tail at the tip of $\mathbf{r}_0$, tip at the tip of $\mathbf{r}$). As we vary $\mathbf{r}$, this defines the family of trajectories passing through $\mathbf{r}_0$. 
 
-Let $\hat{\mathbf{n}}$ be a normal vector (i.e. perpendicular) to $\mathbf{r}-\mathbf{r}_0$ at some point.
+Let $\mathbf{n}$ be a normal vector (i.e. perpendicular) to $\mathbf{r}-\mathbf{r}_0$ at some point.
 
 In order for this trajectory to define a straight line (extended either ways indefinitely), we must need this normal to be pointing to the same direction everywhere. That is, a single normal vector stays normal to $\mathbf{r}-\mathbf{r}_0$ throughout. 
 
 The equation in the vector form is this orthogonality condition between these two:
 
 $$
-(\mathbf{r}-\mathbf{r}_0)\cdot\hat{\mathbf{n}}=0
+(\mathbf{r}-\mathbf{r}_0)\cdot\mathbf{n}=0
 $$
 
 Now, looking back at our original equation, we rearrange $y(x)-y(a)=m(x-a)$ to get
@@ -89,7 +89,7 @@ $$
 that always point downwards, and how far or which direction in the $x$-axis it points to is completely determined by its slope. Since the slope stays constant for straight lines, we can compute $y'(x)$ at any point (say, at $a$), and use $m=y'(a)$ throughout.
 
 $$
-\hat{\mathbf{n}}=\begin{pmatrix}y'(a)\\ 
+\mathbf{n}=\begin{pmatrix}y'(a)\\ 
 -1\end{pmatrix}
 $$
 
@@ -120,7 +120,7 @@ $$
 Now we see a pattern forming. If we follow from the equation, we can derive directly that $z_x=\frac{\partial z}{\partial x}=m$ and $z_y=\frac{\partial z}{\partial y}=n$. So, the normal to this plane actually is
 
 $$
-\hat{\mathbf{n}}=\begin{pmatrix}
+\mathbf{n}=\begin{pmatrix}
 z_x\\ 
 z_y\\
 -1\end{pmatrix}
