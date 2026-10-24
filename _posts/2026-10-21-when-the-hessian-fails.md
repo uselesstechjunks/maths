@@ -2,6 +2,7 @@
 layout: post
 title: "When the Hessian fails"
 date: 2026-10-21
+slug: when-the-hessian-fails
 tags:
   - calculus
   - optimisation
@@ -36,7 +37,9 @@ y(x)&=f(a)+f'(a)(x-a) \\
 \end{aligned}
 $$
 
-which now looks more familiar for a straight line passing through $(a, b)$ with a slope $m$. [^2]
+{% assign related_post = site.posts | where: "slug", "linear-structures" | first %}
+
+which now looks more familiar for a straight line passing through $(a, b)$ with a slope $m$. Some interesting details on that is covered in [Linear Structures in Higher Dimensions]({{ related_post.url | relative_url }}).
 
 $$
 y-b=m(x-a)
@@ -85,58 +88,3 @@ Note that in this entire discussion, we actually didn't need the function to be 
     As for higher dimensions, even for $f:\mathbb{R}^2\to\mathbb{R}$, things became difficult. I did the best I could drawing on cues from 3Blue1Brown. I knew what positive eigenvalues were meant to do to the surface geometrically, or what the basis transformations did. But when I wanted to solve a problem, I couldn't remember whether $H(x,y)<0$ meant "saddle" or was it $>0$ (or $=0$). Worse still, I realised that I couldn't see a way to figure this out from the things that I knew.
 
     So here is an attempt to capture a slightly different approach that still lets me reconstruct the conditions without memorisation. I'll also take this one step further, involving notations that I haven't seen before. There might be a geometric view to this as well. But until I know more about quadratic or trilinear forms, this would have to do.
-
-[^2]: Here is something I also wish I had known earlier. A slight rearrangement makes this into a general vector-form equation. The nice thing about that is that it extends to higher dimensions.
-
-    What is the vector form equation? Say, the line passes through the tip of the vector $\mathbf{r}_0$ (tail at origin). For any arbitrary vector $\mathbf{r}$, one can imagine the difference vector $\mathbf{r}-\mathbf{r}_0$ (tail at $\mathbf{r}_0$, tip at $\mathbf{r}$) to be the line. Let $\hat{\mathbf{n}}$ be a normal vector to this line (i.e. perpendicular). The equation in this form is essentially the orthogonality between these two vectors:
-
-    $$
-    (\mathbf{r}-\mathbf{r}_0)\cdot\hat{\mathbf{n}}=0
-    $$
-
-    For our simple scalar case, the vector is made up by 1 input dimension and 1 output dimension. That is, our line is in $\mathbb{R}^2$ made up with points $(x, y(x))$ that must pass through
-
-    $$
-    \mathbf{r}_0=
-    \begin{pmatrix} 
-    a \\ 
-    f(a) 
-    \end{pmatrix}
-    $$
-
-    Rearranging $y(x)-f(a)=f'(a)(x-a)$, we get
-
-    $$
-    \begin{aligned}
-    f'(a)(x-a) - (y(x)-f(a)) &= 0 \\
-    \therefore\quad
-    \begin{pmatrix}
-    x-a \\
-    y(x)-f(a)
-    \end{pmatrix}
-    \cdot
-    \begin{pmatrix}
-    f'(a) \\
-    -1
-    \end{pmatrix}
-    &= 0
-    \end{aligned}
-    $$
-
-    When $f'(a)=0$, the equation reduces to $y(x)=f(a)$, which is parallel to the $x$-axis.
-
-    For $f:\mathbb{R}^n\to\mathbb{R}$, this extends to
-
-    $$
-    
-    \begin{pmatrix}
-    \mathbf{x}-\mathbf{a} \\
-    y(\mathbf{x})-f(\mathbf{a})
-    \end{pmatrix}
-    \cdot
-    \begin{pmatrix}
-    \nabla_\mathbf{x}(\mathbf{a}) \\
-    -1
-    \end{pmatrix}
-    &= 0
-    $$
