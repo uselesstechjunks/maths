@@ -50,7 +50,7 @@ title: Home
           <h3>
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
           </h3>
-          <div class="note-excerpt">{{ post.excerpt }}</div>
+          <div class="note-excerpt">{{ post.content | strip_html | truncatewords: 40 }}</div>
           <div class="post-tags">
             {% for tag in post.tags %}
               <button class="tag tag-filter" data-tag="{{ tag | escape }}">
