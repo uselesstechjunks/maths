@@ -78,7 +78,7 @@ Note that in this entire discussion, we actually didn't need the function to be 
     (\mathbf{r}-\mathbf{r}_0)\cdot\hat{\mathbf{n}}=0
     $$
 
-    For our simple scalar case, the vector is made up by 1 input dimension and 1 output dimension. That is, our line is in $\mathbb{R}^2$ made up with points $(x, g(x))$ that must pass through
+    For our simple scalar case, the vector is made up by 1 input dimension and 1 output dimension. That is, our line is in $\mathbb{R}^2$ made up with points $(x, y(x))$ that must pass through
 
     $$
     \mathbf{r}_0=
@@ -88,11 +88,11 @@ Note that in this entire discussion, we actually didn't need the function to be 
     \end{pmatrix}
     $$
 
-    Rearranging $g(x)-f(a)=f'(a)(x-a)$, we get
+    Rearranging $y(x)-f(a)=f'(a)(x-a)$, we get
 
     $$
     \begin{aligned}
-    f'(a)(x-a) - (g(x)-f(a)) &= 0 \\
+    f'(a)(x-a) - (y(x)-f(a)) &= 0 \\
     \therefore\quad
     \begin{pmatrix}
     x-a \\
@@ -108,3 +108,19 @@ Note that in this entire discussion, we actually didn't need the function to be 
     $$
 
     When $f'(a)=0$, the equation reduces to $y(x)=f(a)$, which is parallel to the $x$-axis.
+
+    For $f:\mathbb{R}^n\to\mathbb{R}$, this extends to
+
+    $$
+    
+    \begin{pmatrix}
+    \mathbf{x}-\mathbf{a} \\
+    y(\mathbf{x})-f(\mathbf{a})
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+    \nabla_\mathbf{x}(\mathbf{a}) \\
+    -1
+    \end{pmatrix}
+    &= 0
+    $$
