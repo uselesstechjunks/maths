@@ -7,17 +7,8 @@ tags:
   - optimisation
   - taylor series
 ---
-When I first learned about stationary points, I leaned heavily on visual intuition. It was sufficient (and fun) to imagine that the tangent lines of a function would rotate up or down as we slid along the $x$-axis, depending on how the graph looks at different points. Whenever the tangent became horizontal, we had a stationary point.
+I wrote a rather long background and motivation for this post which I've since pushed to footnotes.[^1]
 
-A nice thing about these intuitions is that I never had to memorise the particulars. For example, the classification of stationary points involved the second derivative test. Fortunately for me, this one also had a visual explanation. When needed, I would call upon an image of a smooth-looking graph around its minimum and deduce that if we moved from left to right passing through the stationary point, the slope of the tangent must go from negative (leaning left) to $0$ and then to positive (leaning right). Therefore, the second derivative must be increasing in the positive direction of $x$, which implied that the correct test for a local minimum was $f^{\prime\prime}(x)>0$ (and $f^{\prime\prime}(x)<0$ for the maximum, by extension).
-
-The limitation of this animation-based mental reconstruction technique is that it is only as good as our imagination. It gets increasingly unreliable as things get subtle or as we move up in dimensions. As a concrete example of the subtle case, I could never explain (or, pay much attention to) the $f^{\prime\prime}(x)=0$ case, except for the trivial scenarios involving a constant $f(x)=c$ or an affine function $f(x)=mx+c$. These are trivial because the slope never changes in the entire domain. I never thought much about what happens at $x=0$ for $f(x)=x^4$, and whether or how it is different from $f(x)=x^3$.
-
-As for higher dimensions, even for $f:\mathbb{R}^2\to\mathbb{R}$, things became difficult. I did the best I could drawing on cues from 3Blue1Brown. I knew what positive eigenvalues were meant to do to the surface geometrically, or what the basis transformations did. But when I wanted to solve a problem, I couldn't remember whether $H(x,y)<0$ meant "saddle" or was it $>0$ (or $=0$). Worse still, I realised that I couldn't see a way to figure this out from the things that I knew.
-
-So here is an attempt to capture a slightly different approach that still lets me reconstruct the conditions without memorisation. I'll also take this one step further, involving notations that I haven't seen before. There might be a geometric view to this as well. But until I know more about quadratic or trilinear forms, this would have to do.
-
-### Truncating the Taylor series
 Let's assume that the function we're dealing with is continuously differentiable (see [[THIS POST]] for more details on continuous differentiability).
 
 To keep things simple, I'll start with the scalar case of $f:U\to\mathbb{R}$, where $U\subseteq\mathbb{R}$ is an open set. 
@@ -47,7 +38,7 @@ y(x)&=f(a)+f'(a)(x-a) \\
 \end{aligned}
 $$
 
-which now looks to be in the more familiar form of a straight line passing through $(a, b)$ with a slope $m$. [^1]
+which now looks to be in the more familiar form of a straight line passing through $(a, b)$ with a slope $m$. [^2]
 
 $$
 y-b=m(x-a)
@@ -71,7 +62,17 @@ Note that in this entire discussion, we actually didn't need the function to be 
 - what's happening there
 - third term in taylor series
 
-[^1]: Here is something I also wish I had known earlier. A slight rearrangement makes this into a general vector-form equation. The nice thing about that is that it extends to higher dimensions.
+[^1]: When I first learned about stationary points, I leaned heavily on visual intuition. It was sufficient (and fun) to imagine that the tangent lines of a function would rotate up or down as we slid along the $x$-axis, depending on how the graph looks at different points. Whenever the tangent became horizontal, we had a stationary point.
+
+    A nice thing about these intuitions is that I never had to memorise the particulars. For example, the classification of stationary points involved the second derivative test. Fortunately for me, this one also had a visual explanation. When needed, I would call upon an image of a smooth-looking graph around its minimum and deduce that if we moved from left to right passing through the stationary point, the slope of the tangent must go from negative (leaning left) to $0$ and then to positive (leaning right). Therefore, the second derivative must be increasing in the positive direction of $x$, which implied that the correct test for a local minimum was $f^{\prime\prime}(x)>0$ (and $f^{\prime\prime}(x)<0$ for the maximum, by extension).
+
+    The limitation of this animation-based mental reconstruction technique is that it is only as good as our imagination. It gets increasingly unreliable as things get subtle or as we move up in dimensions. As a concrete example of the subtle case, I could never explain (or, pay much attention to) the $f^{\prime\prime}(x)=0$ case, except for the trivial scenarios involving a constant $f(x)=c$ or an affine function $f(x)=mx+c$. These are trivial because the slope never changes in the entire domain. I never thought much about what happens at $x=0$ for $f(x)=x^4$, and whether or how it is different from $f(x)=x^3$.
+
+    As for higher dimensions, even for $f:\mathbb{R}^2\to\mathbb{R}$, things became difficult. I did the best I could drawing on cues from 3Blue1Brown. I knew what positive eigenvalues were meant to do to the surface geometrically, or what the basis transformations did. But when I wanted to solve a problem, I couldn't remember whether $H(x,y)<0$ meant "saddle" or was it $>0$ (or $=0$). Worse still, I realised that I couldn't see a way to figure this out from the things that I knew.
+
+    So here is an attempt to capture a slightly different approach that still lets me reconstruct the conditions without memorisation. I'll also take this one step further, involving notations that I haven't seen before. There might be a geometric view to this as well. But until I know more about quadratic or trilinear forms, this would have to do.
+
+[^2]: Here is something I also wish I had known earlier. A slight rearrangement makes this into a general vector-form equation. The nice thing about that is that it extends to higher dimensions.
 
     What is the vector form equation? Say, the line passes through the tip of the vector $\mathbf{r}_0$ (tail at origin). For any arbitrary vector $\mathbf{r}$, one can imagine the difference vector $\mathbf{r}-\mathbf{r}_0$ (tail at $\mathbf{r}_0$, tip at $\mathbf{r}$) to be the line. Let $\hat{\mathbf{n}}$ be a normal vector to this line (i.e. perpendicular). The equation in this form is essentially the orthogonality between these two vectors:
 
