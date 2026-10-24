@@ -2,6 +2,7 @@
 layout: post
 title: "Linear Structures in Higher Dimensions"
 date: 2026-10-14
+slug: linear-structures
 tags:
   - geometry
   - calculus
