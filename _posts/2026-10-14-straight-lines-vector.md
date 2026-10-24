@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Straight Lines in Vector Form"
+title: "Linear Structures in Vector Form"
 date: 2026-10-14
 tags:
   - geometry
