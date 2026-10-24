@@ -18,19 +18,19 @@ As for higher dimensions, even for $f:\mathbb{R}^2\to\mathbb{R}$, things became 
 So here is an attempt to capture a slightly different approach that still lets me reconstruct the conditions without memorisation. I'll also take this one step further, involving notations that I haven't seen before. There might be a geometric view to this as well. But until I know more about quadratic or trilinear forms, this would have to do.
 
 ### Truncating the Taylor series
-Let's assume that the function we're dealing with is continuously differentiable (we'll discuss on what this means concretely in another post [[INSERT TITLE]]). 
+Let's assume that the function we're dealing with is continuously differentiable (see [[THIS POST]] for more details on continuous differentiability).
 
 To keep things simple, I'll start with the scalar case of $f:U\to\mathbb{R}$, where $U\subseteq\mathbb{R}$ is an open set. 
 
 Why do we need an open set for the domain? Because we're going to nudge the input and we need to make sure we can do that safely within the domain of $f$.
 
-Around a point $x\in U$, the taylor expansion is
+Around a point $x\in U$, the Taylor expansion is
 
 $$
 f(x+h)=f(x)+f'(x)h+\frac{1}{2!}f^{\prime\prime}(x)h^2+\frac{1}{3!}f^{\prime\prime\prime}(x)h^3+\cdots
 $$
 
-This converges as long as our judge keeps it within its radius of convergence.
+This converges as long as the nudge $h$ keeps it within its radius of convergence. See [[THIS POST]] for more details on Taylor expansion.
 
 For a linear approximation, we take up-to term with the first derivative. Let's use a different letter $y$ for the function that represents this approximation so that we don't mix things up (this is not the same function $f$).
 
