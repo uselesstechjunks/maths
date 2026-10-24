@@ -24,13 +24,15 @@ $$
 \lim\limits_{n\to\infty} s_n(t)
 $$
 
-Let's have the sequence converging towards a limit. That is, we have $f_n\to f$ as $n\to\infty$ for some $f:F\to\mathbb{R}$. To define this, let's ensure that it converges to $f$ for every point in the domain.
+Let's have the sequence converging towards a limit. That is, let there be some $f:F\to\mathbb{R}$ such that we have $f_n\to f$ as $n\to\infty$.
+
+To define this limit, let's ensure that it converges to $f$ for every point in the domain.
 
 $$
 \forall x\in\mathbb{R}, \lim\limits_{n\to\infty} f_n(x)=f(x)
 $$
 
-What we want is to see whether swapping the limit and integral works, so that we can do this:
+What we want is to see whether swapping the limit and integral works, so that we are allowed to do this:
 
 $$
 \lim\limits_{n\to\infty}\left(\int\limits_0^t f_n(x)\mathrm{dx}\right)\overset{?}{=}\int\limits_0^t\left(\lim\limits_{n\to\infty} f_n(x)\right)\mathrm{dx}=\int\limits_0^tf(x)\mathrm{dx}
