@@ -11,9 +11,11 @@ tags:
 ---
 {% assign related_post = site.posts | where: "slug", "dirichlet-laplace-feynman" | first %}
 
-Derivatives and integrals involving Laplace transform are interesting as they are quite useful in many different situations, including solving ODEs or tricky integrals. I'll create other posts on some of those cool applications (for example, see [this]({{ related_post.url | relative_url }})).
+Derivatives and integrals involving Laplace transform are quite useful in different situations, including solving ODEs or tricky integrals. I'll cover some of those in other posts (for example, see [this]({{ related_post.url | relative_url }})).
 
-In this, I'm adding some hints to help me derive them from the first principle when I am revisiting them later. When working on these, I found two of these formulas quite easy to work out. For the other two, I had a tough time. I might make further edits to this post if I find something that makes it even easier to prove.
+Here, I'm adding some hints to help me derive them from the first principle when I am revisiting them later. When working on these, I found two of these formulas quite easy to work out. For the other two, I had a tough time. 
+
+I might make further edits to this post if I find something that makes it even easier to prove.
 
 So let's start.
 
@@ -25,7 +27,7 @@ $$
 
 Few things to note: 
 - The kernel is the bit that connects the source domain and the target domain. It is exponent on both.
-- The kernel is symmetric as $e^{-st}=e^{-ts}$
+- The kernel is symmetric as $e^{-st}=e^{-ts}$. This one is useful when we're swapping integrals (covered elsewhere).
 - The improper integral is defined in the Riemannian sense, that is, it is defined as the limit of integrals over finite domains $[0, \beta]$
 
 $$
@@ -49,7 +51,7 @@ $$
 Now, onto the main results. The cool thing about performing derivatives and integrals on either side is that they result in algebraic relation with regards to the transform of the original function. The results involving integrals are particularly well-behaved.
 
 ### Laplace Transforms on Derivatives
-Taking derivatives on source functions result in scalar multiplication (with a shift) in the target space. The key result here is
+Taking derivatives on source functions result in multiplication by the variable (with an offset) in the target space. The key result here is
 
 $$
 \mathcal{L}\{f'(t)\}=sF(s)-f(0)
@@ -72,10 +74,10 @@ $$
 \mathcal{L}\left\{\int\limits_0^tf(\tau)\mathrm{d\tau}\right\}=\frac{F(s)}{s}
 $$
 
-Hint: Reuse the derivative formula by replacing the integral.
+Hint: Reuse the derivative formula by substituting the integral inside the transform.
 
 ### Derivatives of Laplace Transforms
-Shows the same multiplicative behaviour, but with an oscillating nature.
+Shows the same multiplicative behaviour, but with an alternate nature.
 
 $$
 F'(s)=\mathcal{L}\{-tf(t)\}
@@ -90,7 +92,7 @@ $$
 Hint: Leibniz rule of differentiating under the integral sign.
 
 ### Integrals of Laplace Transforms
-Integrating on target results in division in source. The key thing to note here is that the limit of the integral on the output space is $[s,\infty)$.
+Integrating on target results in division at source. The key thing to note here is that the limit of the integral on the output space is $[s,\infty)$.
 
 $$
 \int\limits_s^\infty F(\sigma)\mathrm{d\sigma}=\mathcal{L}\left\{\frac{f(t)}{t}\right\}
@@ -106,7 +108,12 @@ Hint:
 - Replace the ratio. Would require invoking the fundamental theorem of calculus, which is shown below as a reminder:
 
 $$
-F(b)-F(a)=\int\limits_a^b F'(x)\mathrm{dx}\implies \left(g(t)=\int\limits_0^tf(u)\mathrm{du}\implies g'(t)=f(t)\right)
+H(b)-H(a)=\int\limits_a^b H'(x)\mathrm{dx}
 $$
 
-- Alternatively, expand the integral into a double integral and apply Fubini.
+This one might also come handy:
+$$
+\left(g(t)=\int\limits_0^tf(u)\mathrm{du}\implies g'(t)=f(t)\right)
+$$
+
+- Alternatively, we can expand the integral into a double integral and apply Fubini.
