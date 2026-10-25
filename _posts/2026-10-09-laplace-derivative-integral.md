@@ -30,7 +30,9 @@ $$
 \Phi(s)=\int\limits_0^\infty \varphi(s, t)\mathrm{dt}=\lim\limits_{\beta\to\infty} \left( \int\limits_0^\beta \varphi(s, t)\mathrm{dt} \right)
 $$
 
-- An alternate way of defining improper integrals would involve Lebesgue integration with a sequence of functions, $\varphi_n(s, t)\to\varphi(s, t)$ as $n\to\infty$. This (might) involve the Monotone Convergence Theorem (MCT). I'll have to learn more about how that is done and how is it different.
+{% assign related_post = site.posts | where: "slug", "improper-integrals-sequence" | first %}
+
+- An alternate way of defining improper integrals would involve Lebesgue integration with a sequence of functions, $\varphi_n(s, t)\to\varphi(s, t)$ as $n\to\infty$. This (might) involve the Monotone Convergence Theorem (MCT). I'll have to learn more about how that is done and how is it different (edit: see this [note]({{ related_post.url | relative_url }})).
 
 $$
 \Phi(s)=\int\limits_0^\infty \varphi(s, t)\mathrm{dt}=\lim\limits_{n\to\infty} \left( \int\limits_0^\infty \varphi_n(s, t)\mathrm{dt} \right)
