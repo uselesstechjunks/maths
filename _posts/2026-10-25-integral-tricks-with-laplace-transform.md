@@ -2,7 +2,7 @@
 layout: post
 title: "Dirichlet, Laplace, and Feynman"
 date: 2026-10-25
-slug: integral-tricks-with-laplace-transform
+slug: dirichlet-laplace-feynman
 tags:
   - integral transform
   - laplace transform
