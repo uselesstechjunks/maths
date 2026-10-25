@@ -9,7 +9,9 @@ tags:
   - differential equations
   - calculus
 ---
-Derivatives and integrals involving Laplace transform are interesting as they are quite useful in many different situations, including solving ODEs or tricky integrals. I'll create other posts on some of those cool applications.
+{% assign related_post = site.posts | where: "slug", "dirichlet-laplace-feynman" | first %}
+
+Derivatives and integrals involving Laplace transform are interesting as they are quite useful in many different situations, including solving ODEs or tricky integrals. I'll create other posts on some of those cool applications (for example, see [this]({{ related_post.url | relative_url }})).
 
 In this, I'm adding some hints to help me derive them from the first principle when I am revisiting them later. When working on these, I found two of these formulas quite easy to work out. For the other two, I had a tough time. I might make further edits to this post if I find something that makes it even easier to prove.
 
