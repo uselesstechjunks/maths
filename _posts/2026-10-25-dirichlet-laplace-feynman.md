@@ -110,3 +110,16 @@ Therefore, what we have finally evaluates to
 $$
 \frac{\pi}{2}\left(1-\frac{1}{e}\right)
 $$
+
+### A Few Follow Ups
+This should be doable using the tricks here.
+
+$$
+\int\limits_0^\infty \frac{\sin^2(x)}{x^2}\mathrm{dx}=\frac{\pi}{2}
+$$
+
+This one looks similar but cannot be solved using Laplace transform alone. We need Lobachevsky's Dirichlet integral formula which I'll cover in a separate post.
+
+$$
+\int\limits_0^\infty \frac{\sin(x)}{x(1+\cos^2(x))}\mathrm{dx}=\frac{\pi}{2\sqrt{2}}
+$$
