@@ -136,4 +136,6 @@ $$
 $$
 
 ### What Breaks?
-It has to do with how we defined the limiting function. Pointwise convergence is not sufficient for this property to hold. The functions in the example have uniform convergence. We'll expand on that in another post.
+{% assign related_post = site.posts | where: "slug", "counterexample-interchanging-limits" | first %}
+
+It has to do with how we defined the limiting function. Pointwise convergence is not sufficient for this property to hold. The functions in the example have uniform convergence. We'll expand on that in another [post]({{ related_post.url | relative_url }}).
