@@ -9,7 +9,9 @@ tags:
   - taylor series
   - approximation
 ---
-We consider the Taylor expansion around $x$ with radius $h$ for a continuously differentiable function $f:\mathbb{R}\to\mathbb{R}$ (i.e., $f\in C^\infty[0,1]$).
+{% assign related_post = site.posts | where: "slug", "continuous-differentiable" | first %}
+
+We consider the Taylor expansion around $x$ with radius $h$ for a [continuously differentiable]({{ related_post.url | relative_url }}) function $f:\mathbb{R}\to\mathbb{R}$ (i.e., $f\in C^\infty[0,1]$).
 
 $$
 f(x+h)=\sum_{n=0}^\infty \frac{1}{n!}f^{(n)}(x)h^n
