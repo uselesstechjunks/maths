@@ -9,7 +9,7 @@ tags:
   - differential equations
   - calculus
 ---
-Laplace transform is useful for evaluating difficult integrals in certain forms. In this post, I'll discuss 2 main tricks, and a couple of examples where we take it to town. The second example is particularly satisfying as it required me to call upon the big guns - partial fractions, Laplace transform, Feynman's trick (differentiating under the integral sign/Leibniz rule), and ODE. I also noted one which should be solvable by the same tricks discussed here, and an example of another which looks similar but can't be solved with these.
+Laplace transform is useful for evaluating difficult integrals of certain forms. In this post, I'll discuss 2 main tricks, and a couple of examples where we take it to town. The second example is particularly satisfying as it required me to call upon the big guns - partial fractions, Laplace transform, Feynman's trick (differentiating under the integral sign/Leibniz rule), and ODE. I also noted one which should be solvable by the same tricks discussed here, and an example of another which looks similar but can't be solved with these.
 
 ### Bag of tricks
 {% assign related_post = site.posts | where: "slug", "laplace-derivative-integral" | first %}
