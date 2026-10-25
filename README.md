@@ -1,2 +1,2 @@
-# maths
-Write-ups on mathematical topics that I think I understand or I don't and I am trying to understand ~
+# Maths
+Mathematical scribbles: things I think I understand, things I don't, and things I'm trying to figure out.
