@@ -86,7 +86,9 @@ $$
 ### Identifying The Patterns
 Apart from the last one, the rest are easily identifiable. For the exact-case, there are essentially three tests we do to check if we're dealing with this pattern.
 
-Since we assume that the solution is total differentiable ($h\in C^1(\mathbb{R}^2,\mathbb{R}$), not only do the partial derivatives exist, they are continuous as well. In this case, the second partial derivatives equal. To check whether this holds, we start by arranging our equation into the form:
+Since we assume that the solution is total differentiable ($h\in C^1(\mathbb{R}^2,\mathbb{R}) $), not only do the partial derivatives exist, they are continuous as well. In this case, the second partial derivatives are equal (question: how do we see why that is?).
+
+To check whether this holds, we start by arranging our equation into the form:
 
 $$
 \frac{dy}{dx}=-\frac{s(x,y)}{t(x,y)}
@@ -98,7 +100,7 @@ $$
 \frac{\partial h}{\partial x}=s(x,y), \frac{\partial h}{\partial y}=t(x,y)
 $$
 
-or, it might have happened that there was a common factor which got cancelled due to the ratio format:
+or, it might have happened that there was a common factor $c(x,y)$ which got cancelled in the ratio form (not due to our rearrangement, but because the problem we're solving never showed it):
 
 $$
 \frac{dy}{dx}=-\frac{s(x,y)c(x,y)}{t(x,y)c(x,y)}
@@ -118,7 +120,7 @@ $$
 $$
 
 #### Second Test for Exact
-If the first test fails, identifying $c(x,y)$ in general is typically hard.
+If the first test fails, identifying $c(x,y)$ in general is typically tough.
 
 #### Third Test for Exact
 
