@@ -45,6 +45,8 @@ When would we have such a situation? A useful example is the $\log$-series expan
 
 Let's start with the power series expansion. This formula can easily be proven by algebra. If we start with $S=\sum_{n=0}^\infty x^n$ for $\vert x\vert < 1$, we have $Sx=S-1\implies S=\frac{1}{1-x}$.
 
+[Edit: on second thought, this is not really an "algebraic" explanation as to why this works. In the proof above, we inherently assumed that the multiplication can be rolled out to infinitely many terms. This is not covered by the algebraic distributive property of multiplication over a summation. That covers only the finite case. There is a rigorous proof as to why we can do this, but I suspect it relies on some of the topological properties that comes for free when we're dealing with real numbers. I'll expand on this in a separate post]
+
 This can immediately help us in recovering the log-series. Integrating both sides we get
 
 $$
