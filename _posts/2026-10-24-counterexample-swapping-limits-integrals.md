@@ -43,9 +43,9 @@ $$
 ### An Example
 When would we have such a situation? A useful example is the $\log$-series expansion (or, any power series expansion).
 
-Let's start with the power series expansion. This formula can easily be proven by algebra. If we start with $S=\sum_{n=0}^\infty x^n$ for $\vert x\vert < 1$, we have $Sx=S-1\implies S=\frac{1}{1-x}$.
+Let's start with the power series expansion. This formula can easily be proven by algebra [^1]. 
 
-[Edit: on second thought, this is not really an "algebraic" explanation as to why this works. In the proof above, we inherently assumed that the multiplication can be rolled out to infinitely many terms. This is not covered by the algebraic distributive property of multiplication over a summation. That covers only the finite case. There is a rigorous proof as to why we can do this, but I suspect it relies on some of the topological properties that comes for free when we're dealing with real numbers. I'll expand on this in a separate post]
+The typical "proof" goes as follows: if we start with $S=\sum_{n=0}^\infty x^n$ for $\vert x\vert < 1$, we have $Sx=S-1\implies S=\frac{1}{1-x}$.
 
 This can immediately help us in recovering the log-series. Integrating both sides we get
 
@@ -145,3 +145,5 @@ $$
 {% assign related_post = site.posts | where: "slug", "counterexample-interchanging-limits" | first %}
 
 It has to do with how we defined the limiting function. Pointwise convergence (converging for each point in the domain independently) is not sufficient for this property to hold. The functions in the series examples have uniform convergence. We'll expand on that in another [post]({{ related_post.url | relative_url }}).
+
+[^1]: On second thought, this is not really an "algebraic" explanation as to why this works. In the proof above, we inherently assumed that the multiplication can be rolled out to infinitely many terms. This is not covered by the algebraic distributive property of multiplication over a summation. That covers only the finite case. There is a rigorous proof as to why we can do this, but I suspect it relies on some of the topological properties that comes for free when we're dealing with real numbers. I'll expand on this in a separate post.
