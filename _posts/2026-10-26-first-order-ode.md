@@ -120,7 +120,7 @@ $$
 $$
 
 #### Second Test for Exact
-If the first test fails, identifying $c(x,y)$ in general is typically tough.
+If the first test fails, identifying $c(x,y)$ in general is typically tough. In the special case where $c$ is a function of $x$ alone, we can find it via a trick.
 
 #### Third Test for Exact
 
