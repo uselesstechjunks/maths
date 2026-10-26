@@ -45,7 +45,11 @@ When would we have such a situation? A useful example is the $\log$-series expan
 
 Let's start with the power series expansion. This formula can easily be proven by algebra [^1]. 
 
-The typical "proof" goes as follows: if we start with $S=\sum_{n=0}^\infty x^n$ for $\vert x\vert < 1$, we have $Sx=S-1\implies S=\frac{1}{1-x}$.
+The typical "proof" goes as follows: if we start with $S=\sum_{n=0}^\infty x^n$ for $\vert x\vert < 1$, we have 
+
+$$
+Sx=S-1\implies S=\frac{1}{1-x}
+$$
 
 This can immediately help us in recovering the log-series. Integrating both sides we get
 
