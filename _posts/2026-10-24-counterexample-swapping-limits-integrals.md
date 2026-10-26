@@ -12,21 +12,23 @@ tags:
 
 When dealing with limits over integrals involving a sequence of functions, it's tempting to swap the integrals and limits to make things easier. 
 
-Let's assume that we have a sequence of functions $(f_n(x))_{n=0}^\infty$, $f_n:F\to\mathbb{R}$ with $F$ being some closed set. The quantity we're interested in is 
+Let's look at this concretely. Say, we have a sequence of functions $(f_n(x))_{n=0}^\infty$, $f_n:F\to\mathbb{R}$ with $F$ being some closed set (why is it required that it's a closed set? [TODO]). 
+
+The quantity we're interested in is 
 
 $$
 \lim\limits_{n\to\infty}\left(\int\limits_0^t f_n(x)\mathrm{dx}\right)
 $$
 
-If we invented $s_n(t)=\int\limits_0^t f_n(x)\mathrm{dx}$, then this is just a normal sequential limit
+If we invented a new symbol for it, say, $s_n(t)=\int\limits_0^t f_n(x)\mathrm{dx}$, then this is just a normal sequential limit
 
 $$
 \lim\limits_{n\to\infty} s_n(t)
 $$
 
-Let's have the sequence converging towards a limit. That is, let there be some $f:F\to\mathbb{R}$ such that we have $f_n\to f$ as $n\to\infty$.
+Let's have the sequence of functions converging towards a limit so that this ordinary sequence converges. That is, let there be some $f:F\to\mathbb{R}$ such that we have $f_n\to f$ as $n\to\infty$.
 
-To define this limit, let's ensure that it converges to $f$ for every point in the domain.
+To define this limit, since it involves functions, we have some choices. For now, let's ensure that it converges to $f$ for every point in the domain.
 
 $$
 \forall x\in\mathbb{R}, \lim\limits_{n\to\infty} f_n(x)=f(x)
@@ -39,17 +41,17 @@ $$
 $$
 
 ### An Example
-When would we have such a situation? A useful example is the $\log$-series expansion (or, any power series expansion). The trick seems to work here.
+When would we have such a situation? A useful example is the $\log$-series expansion (or, any power series expansion).
 
 Let's start with the power series expansion. This formula can easily be proven by algebra. If we start with $S=\sum_{n=0}^\infty x^n$ for $\vert x\vert < 1$, we have $Sx=S-1\implies S=\frac{1}{1-x}$.
 
-This can immediately help recover the log-series. Integrating both sides we get
+This can immediately help us in recovering the log-series. Integrating both sides we get
 
 $$
 \int\limits_0^t\frac{1}{1-x}\mathrm{dx}=\int\limits_0^t\left(\sum_{n=0}^\infty x^n\right)\mathrm{dx}
 $$
 
-Our function sequence here is made up by the partial sums $f_n(x)=\sum_{k=0}^nx^k$. With this notation, $f(x)=\lim\limits_{n\to\infty} f_n(x)$. 
+To clarify, the function sequence we're dealing with here is made up by the partial sums $f_n(x)=\sum_{k=0}^nx^k$. With this notation, $f(x)=\lim\limits_{n\to\infty} f_n(x)$. 
 
 So what we have here can be written as
 
@@ -63,7 +65,7 @@ $$
 \int\limits_0^t\frac{1}{1-x}\mathrm{dx}=\lim\limits_{n\to\infty}\left(\int\limits_0^t\left(\sum_{k=0}^nx^k\right)\mathrm{dx}\right)
 $$
 
-Using linearity of integral (it's a finite number of terms), we have
+Using linearity of integral (applies as it's just a finite number of terms), we have
 
 $$
 \left[\ln(1-x)\right]_ 0^t=\lim\limits_{n\to\infty}\sum_{k=0}^n\left(\int\limits_0^tx^k\mathrm{dx}\right)=\lim\limits_{n\to\infty}\sum_{k=0}^n\left[\frac{x^{k+1}}{k+1}\right]_0^t=\lim\limits_{n\to\infty}\sum_{k=0}^n\frac{t^{k+1}}{k+1}=\sum_{k=0}^\infty\frac{t^{k+1}}{k+1}
@@ -74,6 +76,8 @@ This gives out familiar series
 $$
 \ln(1-t)=t+\frac{t^2}{2}+\frac{t^3}{3}+\cdots
 $$
+
+The trick seems to work here.
 
 ### Another Example
 We can use this for finding complicated series expansions, for example $\arctan(x)$ by rearranging
@@ -91,7 +95,7 @@ $$
 ### A Counterexample
 Before we get carried away, let's look at another one where this breaks down.
 
-Let $f_n=nxe^{-nx^2}$ forming our sequence with $f_n:[0,1]\to\mathbb{R}$. For the limit, we can check this case by case.
+Let $f_n=nxe^{-nx^2}$ be our sequence with $f_n:[0,1]\to\mathbb{R}$. For the limit, we can check this case by case.
 
 #### Case 1
 For $x=0$, $f_n(x)=0$, and therefore the limit is $f(x)=0$.
@@ -138,4 +142,4 @@ $$
 ### What Breaks?
 {% assign related_post = site.posts | where: "slug", "counterexample-interchanging-limits" | first %}
 
-It has to do with how we defined the limiting function. Pointwise convergence is not sufficient for this property to hold. The functions in the example have uniform convergence. We'll expand on that in another [post]({{ related_post.url | relative_url }}).
+It has to do with how we defined the limiting function. Pointwise convergence (converging for each point in the domain independently) is not sufficient for this property to hold. The functions in the series examples have uniform convergence. We'll expand on that in another [post]({{ related_post.url | relative_url }}).
