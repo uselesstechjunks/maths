@@ -294,5 +294,7 @@ $$
 \frac{\mathrm{d\rho}}{\rho}=g(x)\mathrm{dx}\implies \ln\lvert\rho\rvert=\int g(x)\mathrm{dx}\implies\rho=e^{\int g(x)\mathrm{dx}}
 $$
 
-[^1]: See this post for some clarifications on the notations I used here.
-[^2]: I'll keep this post updated with other patterns and solving techniques as I learn more about them.
+{% assign related_post = site.posts | where: "slug", "derivatives-differentials-gradients" | first %}
+
+[^1]: See [this post]({{ related_post.url | relative_url }}) for some clarifications on the notations I used here.
+[^2]: I'll make further edits to this post with more patterns, nuances and solving techniques.
