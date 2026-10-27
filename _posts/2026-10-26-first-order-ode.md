@@ -88,6 +88,10 @@ Apart from the last one, the rest are easily identifiable. For the exact-case, t
 
 Since we assume that the solution is total differentiable ($h\in C^1(\mathbb{R}^2,\mathbb{R}) $), not only do the partial derivatives exist, they are continuous as well. In this case, the second partial derivatives are equal (question: how do we see why that is?).
 
+$$
+\frac{\partial^2 h}{\partial y\partial x}=\frac{\partial^2 h}{\partial x\partial y}
+$$
+
 To check whether this holds, we start by arranging our equation into the form:
 
 $$
@@ -100,7 +104,7 @@ $$
 \frac{\partial h}{\partial x}=s(x,y), \frac{\partial h}{\partial y}=t(x,y)
 $$
 
-or, it might have happened that there was a common factor $c(x,y)$ which got cancelled in the ratio form (not due to our rearrangement, but because the problem we're solving never showed it):
+or, it might have happened that there was a common factor $c(x,y)$ which never showed up due to the ratio form:
 
 $$
 \frac{dy}{dx}=-\frac{s(x,y)c(x,y)}{t(x,y)c(x,y)}
@@ -116,11 +120,20 @@ $$
 If it's the first case, we can identify it by testing for the following:
 
 $$
-\frac{\partial s}{\partial y}=\frac{\partial t}{\partial x}\left[\because \frac{\partial^2 h}{\partial y\partial x}=\frac{\partial^2 h}{\partial x\partial y}\right]
+\frac{\partial s}{\partial y}=\frac{\partial t}{\partial x}
 $$
 
 #### Second Test for Exact
-If the first test fails, identifying $c(x,y)$ in general is tough. So, if possible, we rely purely on muscle memory as we look for seen patterns, such as
+If the first test fails, identifying $c(x,y)$ in general is tough. In the special case where $c$ is a function of $x$ alone, we can find it via a trick. I'll just mention the trick here and derive it in the footnotes otherwise this looks bizarre. [^3]
+
+Since we must have computed $\partial s/\partial y$ and $\partial t/\partial x$ already for the first test, we now compute the following and see if this turns out to get rid of $y$ completely:
+
+$$
+\frac{\partial s/\partial y-\partial t/\partial x}{t}=g(x)
+$$
+
+#### Third Test for Exact
+If the second test fails as well, we rely purely on muscle memory as we look for seen patterns, such as
 
 $$
 \begin{align}
@@ -139,10 +152,8 @@ x\mathrm{dy}+y\mathrm{dx} &=& d(xy)
 \end{align}
 $$
 
-which often carries a hint of what $c(x,y)$ might make sense. Once we identify $c$, we can reuse the tests for exactness.
+which often carries a hint of what $c(x,y)$ might make sense. Once we identify $c$, we can reuse the double partial tests for exactness.
 
-#### Third Test for Exact
-In the special case where $c$ is a function of $x$ alone, we can find it via a trick.
 
 ### Solving Tricks
 #### Leverage Symmetry
@@ -152,3 +163,28 @@ The function shows a constant behaviour along radial lines outward of origin. [T
 
 [^1]: See this post for some clarifications on the notations I used here.
 [^2]: I'll keep this post updated with other patterns and solving techniques as I learn more about them.
+[^3]: Let's start with the premise that $c=c(x)$. We note that for the second partial derivative symmetry to hold, we must need that
+
+$$
+\frac{\partial}{\partial y}\left(c(x)s(x,y)\right)=\frac{\partial}{\partial x}\left(c(x)t(x,y)\right)
+$$
+
+Expanding, we get
+
+$$
+\frac{\partial c}{\partial y}s+c\frac{\partial s}{\partial y}=\frac{\partial c}{\partial x}t+c\frac{\partial t}{\partial x}
+$$
+
+Since $c$ is only function of $x$, we have $\partial c/\partial y=0$ and $\frac{\partial c}{\partial x}=\frac{\mathrm{dc}}{\mathrm{dx}}$. Therefore the condition we must need to satisfy is
+
+$$
+c\frac{\partial s}{\partial y}=\frac{\mathrm{dc}}{\mathrm{dx}}t+c\frac{\partial t}{\partial x}
+$$
+
+and, with a rearrangement
+
+$$
+\frac{\mathrm{dc}}{c}=\frac{\partial s/\partial y-\partial t/\partial x}{t}
+$$
+
+If the right side turns out to be in the form of $g(x)$, then we can solve for this and find $c$ as it has the form of a fully separable ODE on its own.
