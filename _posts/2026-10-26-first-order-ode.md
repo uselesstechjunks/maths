@@ -70,7 +70,7 @@ $$
 $$
 
 #### Linear
-It is linear in $y$
+It is linear in $y$.
 
 $$
 \frac{dy}{dx}=f(x,y)=p(x)y+q(x)
@@ -89,7 +89,7 @@ $$
 \frac{dy}{dx}=f(x,y)=-\frac{\partial h/\partial x}{\partial h/\partial y}
 $$
 
-### Identifying The Patterns
+### Identifying the Patterns
 Apart from the last one, the rest are easily identifiable. For the exact-case, there are essentially three tests.
 
 If we assume $h\in C^2(\mathbb{R}^2,\mathbb{R})$, the second partial derivatives are equal (why?).
@@ -169,7 +169,7 @@ x\mathrm{dy}+y\mathrm{dx}=d(xy)
 \end{gather}
 $$
 
-These often carry a hint of what $\rho(x,y)$ might make sense. Once we identify $\rho$, we can reuse the double partial tests for exactness.
+These often hint at a sensible $\rho(x,y)$. Once we identify $\rho$, we can reuse the double partial tests for exactness.
 
 ### Solving Tricks
 #### Separable
@@ -180,7 +180,7 @@ $$
 $$
 
 #### Homogeneous: Leverage Symmetry
-Homogeneous functions stay constant along radial lines as it depends only on $y/x$. Therefore, we can reparameterise this as a function of the slope of lines in the $y=mx$ form. 
+Homogeneous functions stay constant along radial lines as they depend only on $y/x$. Therefore, we reparameterise this as a function of the slope of lines in the $y=mx$ form. 
 
 A point worth clarifying is that $m$ is not a constant. We have a family of lines, where $m$ is a function of $x$ ($m=m(x)=y(x)/x$).
 
@@ -264,7 +264,7 @@ $$
 
 ### Appendix
 #### Deriving the Test Condition for Integrating Factors
-Let's start with the premise that $\rho=\rho(x)$. We note that for the second partial derivative symmetry to hold, we must need that
+Let's start with the premise that $\rho=\rho(x)$. We note that for the second partial derivative symmetry to hold, we must have
 
 $$
 \frac{\partial}{\partial y}(\rho s)=\frac{\partial}{\partial x}(\rho t)
@@ -276,7 +276,7 @@ $$
 \frac{\partial \rho}{\partial y}s+\rho\frac{\partial s}{\partial y}=\frac{\partial \rho}{\partial x}t+\rho\frac{\partial t}{\partial x}
 $$
 
-Since $\rho$ is a function of only $x$, we have $\partial \rho/\partial y=0$ and $\frac{\partial \rho}{\partial x}=\frac{\mathrm{d\rho}}{\mathrm{dx}}$. Therefore the condition we must need to satisfy is
+Since $\rho$ is a function of only $x$, we have $\partial \rho/\partial y=0$ and $\frac{\partial \rho}{\partial x}=\frac{\mathrm{d\rho}}{\mathrm{dx}}$. Therefore the condition we need to satisfy is
 
 $$
 \rho\frac{\partial s}{\partial y}=\frac{\mathrm{d\rho}}{\mathrm{dx}}t+\rho\frac{\partial t}{\partial x}
