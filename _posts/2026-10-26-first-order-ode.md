@@ -76,6 +76,12 @@ $$
 \frac{dy}{dx}=f(x,y)=p(x)y+q(x)
 $$
 
+It is typically written with $p(x)$ on the left hand side. When we solve it, it would become clear why it is preferred this way:
+
+$$
+\frac{dy}{dx}+p(x)y=q(x)
+$$
+
 #### Exact
 This one is described in terms of the partials of the solution $h$.
 
@@ -84,9 +90,9 @@ $$
 $$
 
 ### Identifying The Patterns
-Apart from the last one, the rest are easily identifiable. For the exact-case, there are essentially three tests we do to check if we're dealing with this pattern.
+Apart from the last one, the rest are easily identifiable. For the exact-case, there are essentially three tests.
 
-Since we assume that the solution is total differentiable ($h\in C^1(\mathbb{R}^2,\mathbb{R}) $), not only do the partial derivatives exist, they are continuous as well. In this case, the second partial derivatives are equal (question: how do we see why that is?).
+Since we assume that the solution is total differentiable ($h\in C^1(\mathbb{R}^2,\mathbb{R}) $), the partial derivatives are continuous, and the second partial derivatives are equal (why?).
 
 $$
 \frac{\partial^2 h}{\partial y\partial x}=\frac{\partial^2 h}{\partial x\partial y}
@@ -101,19 +107,24 @@ $$
 If this was indeed in the form the exact-pattern desires, then one of these two things must be true. It's either the following:
 
 $$
-\frac{\partial h}{\partial x}=s(x,y), \frac{\partial h}{\partial y}=t(x,y)
+\begin{align}
+\frac{\partial h}{\partial x}=s(x,y)\\ 
+\frac{\partial h}{\partial y}=t(x,y)
+\end{align}
 $$
 
-or, it might have happened that there was a common factor $c(x,y)$ which never showed up due to the ratio form:
+or, it might have happened that there was a common factor $\rho(x,y)$ which never showed up due to the ratio form:
 
 $$
-\frac{dy}{dx}=-\frac{s(x,y)c(x,y)}{t(x,y)c(x,y)}
+\frac{dy}{dx}=-\frac{s(x,y)\rho(x,y)}{t(x,y)\rho(x,y)}
 $$
 
 with 
 
 $$
-\frac{\partial h}{\partial x}=s(x,y)c(x,y), \frac{\partial h}{\partial y}=t(x,y)c(x,y)
+\begin{align}
+\frac{\partial h}{\partial x}=s(x,y)\rho(x,y)\\
+\frac{\partial h}{\partial y}=t(x,y)\rho(x,y)\end{align}
 $$
 
 #### First Test for Exact
@@ -124,67 +135,158 @@ $$
 $$
 
 #### Second Test for Exact
-If the first test fails, identifying $c(x,y)$ in general is tough. In the special case where $c$ is a function of $x$ alone, we can find it via a trick. I'll just mention the trick here and derive it in the footnotes otherwise this looks bizarre. [^3]
+If the first test fails, identifying $\rho(x,y)$ in general is tough. If $\rho$ happens to be a function of $x$ alone, we can test for it and find it via a trick. I'll just mention the test here. I've added the derivation for the trick for finding it in full detail in the appendix.
 
-Since we must have computed $\partial s/\partial y$ and $\partial t/\partial x$ already for the first test, we now compute the following and see if this turns out to get rid of $y$ completely:
+Since we must have computed $\partial s/\partial y$ and $\partial t/\partial x$ already for the first test, we now compute the following and see if we can get rid of $y$ completely:
 
 $$
 \frac{\partial s/\partial y-\partial t/\partial x}{t}=g(x)
 $$
 
 #### Third Test for Exact
-If the second test fails as well, we rely purely on muscle memory as we look for seen patterns, such as
+If the second test fails as well, then $\rho$ is function of both. In that case, we rely purely on muscle memory as we look for known patterns. A few of them appear frequently once we rearrange a bit:
 
 $$
-\begin{align}
-\frac{y\mathrm{dx}-x\mathrm{dy}}{y^2} &=& d\left(\frac{y}{x}\right) \\
-\frac{y\mathrm{dx}-x\mathrm{dy}}{x^2+y^2} &=& d\left(\arctan\left(\frac{y}{x}\right)\right) \\
-\frac{y\mathrm{dx}-x\mathrm{dy}}{xy} &=& d\left(\ln\left(\frac{y}{x}\right)\right) \\
-\end{align}
+\begin{gather}
+\frac{y\mathrm{dx}-x\mathrm{dy}}{y^2}=d\left(\frac{y}{x}\right),\quad \frac{x\mathrm{dy}-y\mathrm{dx}}{x^2}=d\left(\frac{x}{y}\right) \\
+\frac{y\mathrm{dx}-x\mathrm{dy}}{x^2+y^2}=d\left(\arctan\left(\frac{y}{x}\right)\right) \\
+\frac{y\mathrm{dx}-x\mathrm{dy}}{xy}=d\left(\ln\left(\frac{y}{x}\right)\right) \\
+\end{gather}
 $$
 
 or
 
 $$
-\begin{align}
-2(x\mathrm{dx}+y\mathrm{dy}) &=& d(x^2+y^2) \\
-x\mathrm{dy}+y\mathrm{dx} &=& d(xy)
-\end{align}
+\begin{gather}
+2(x\mathrm{dx}+y\mathrm{dy})=d(x^2+y^2) \\
+x\mathrm{dy}+y\mathrm{dx}=d(xy)
+\end{gather}
 $$
 
-which often carries a hint of what $c(x,y)$ might make sense. Once we identify $c$, we can reuse the double partial tests for exactness.
-
+These often carries a hint of what $\rho(x,y)$ might make sense. Once we identify $\rho$, we can reuse the double partial tests for exactness.
 
 ### Solving Tricks
-#### Leverage Symmetry
-The function shows a constant behaviour along radial lines outward of origin. [TODO]
-
-#### Integrating Factors
-
-[^1]: See this post for some clarifications on the notations I used here.
-[^2]: I'll keep this post updated with other patterns and solving techniques as I learn more about them.
-[^3]: Let's start with the premise that $c=c(x)$. We note that for the second partial derivative symmetry to hold, we must need that
+#### Separable
+If the equation is separable, we can solve directly 
 
 $$
-\frac{\partial}{\partial y}\left(c(x)s(x,y)\right)=\frac{\partial}{\partial x}\left(c(x)t(x,y)\right)
+\int q(y)\mathrm{dy}=\int p(x)\mathrm{dx}+c
+$$
+
+#### Homogeneous: Leverage Symmetry
+Homogeneous functions stay constant along radial lines as it depends only on $y/x$. Therefore, we can reparameterise this as a function of the slope of lines in the $y=mx$ form. 
+
+A point worth clarifying is that $m$ is not a constant. We have a family of lines, where $m$ is a function of $x$ ($m=m(x)=y(x)/x$).
+
+To solve, we compute the differential and set it to $r(m)$:
+
+$$
+\frac{\mathrm{dy}}{\mathrm{dx}}=\frac{\mathrm{dm}}{\mathrm{dx}}x+m=r(m)
+$$
+
+which turns out to be a separable ODE for $m$:
+
+$$
+\frac{\mathrm{dm}}{\mathrm{dx}}=\frac{r(m)-m}{x}
+$$
+
+#### Exact: Integrating through Partial
+Once we have solved the ODE for $\rho$, we end up with 2 equations that must hold simultaneously:
+
+$$
+\frac{\partial h}{\partial x}=\rho s;\quad \frac{\partial h}{\partial y}=\rho t
+$$
+
+The trick to solve these is to note that 
+
+$$
+\frac{\partial h}{\partial x}=\rho s \Longleftrightarrow  h=\left(\int\rho s\mathrm{dx}\right)+g(y)
+$$
+
+which implies
+
+$$
+\frac{\partial}{\partial y}\left(\int\rho s\mathrm{dx}\right)+g'(y)=\rho t
+$$
+
+We can find $g(y)$ from this (often much more manageable form than this one suggest when solving with actual equations):
+
+$$
+g(y)=\int g'(y)\mathrm{dy}=\int\left(\rho t-\frac{\partial}{\partial y}\left(\int\rho s\mathrm{dx}\right)\right)\mathrm{dy}
+$$
+
+The final solution is
+
+$$
+h=\int\rho s\mathrm{dx}+\int\left(\rho t-\frac{\partial}{\partial y}\left(\int\rho s\mathrm{dx}\right)\right)\mathrm{dy}
+$$
+
+#### Linear: Mapping to to Exact
+We first note that this can be rearranged in the form
+
+$$
+\frac{dy}{dx}=-\frac{p(x)y-q(x)}{1}=-\frac{s(x,y)}{t(x,y)}
+$$
+
+with $s=py-q$ and $t=1$.
+
+Now, if we run the second test for exactness, we get
+
+$$
+\frac{\partial s/\partial y-\partial t/\partial x}{t}=p
+$$
+
+and hence we obtain our integrating factor as $\rho=e^{\int p\mathrm{dx}}$.
+
+However, due to the fact that it's linear in $y$, solving this turns out to be simpler. If we multiply the integrating factor, we end up with an eqution involving a direct differential:
+
+$$
+\frac{dy}{dx}e^{\int p\mathrm{dx}}+ype^{\int p\mathrm{dx}}=qe^{\int p\mathrm{dx}}
+$$
+
+which rearranges into
+
+$$
+\frac{d}{dx}\left(ye^{\int p\mathrm{dx}}\right)=qe^{\int p\mathrm{dx}}
+$$
+
+Solving it produces
+
+$$
+y=e^{-\int p\mathrm{dx}}\left(\int qe^{\int p\mathrm{dx}}\mathrm{dx+c}\right)
+$$
+
+### Appendix
+#### Deriving the Test Condition for Integrating Factors
+Let's start with the premise that $\rho=\rho(x)$. We note that for the second partial derivative symmetry to hold, we must need that
+
+$$
+\frac{\partial}{\partial y}(\rho s)=\frac{\partial}{\partial x}(\rho t)
 $$
 
 Expanding, we get
 
 $$
-\frac{\partial c}{\partial y}s+c\frac{\partial s}{\partial y}=\frac{\partial c}{\partial x}t+c\frac{\partial t}{\partial x}
+\frac{\partial \rho}{\partial y}s+\rho\frac{\partial s}{\partial y}=\frac{\partial \rho}{\partial x}t+\rho\frac{\partial t}{\partial x}
 $$
 
-Since $c$ is only function of $x$, we have $\partial c/\partial y=0$ and $\frac{\partial c}{\partial x}=\frac{\mathrm{dc}}{\mathrm{dx}}$. Therefore the condition we must need to satisfy is
+Since $\rho$ is only function of $x$, we have $\partial \rho/\partial y=0$ and $\frac{\partial \rho}{\partial x}=\frac{\mathrm{d\rho}}{\mathrm{dx}}$. Therefore the condition we must need to satisfy is
 
 $$
-c\frac{\partial s}{\partial y}=\frac{\mathrm{dc}}{\mathrm{dx}}t+c\frac{\partial t}{\partial x}
+\rho\frac{\partial s}{\partial y}=\frac{\mathrm{d\rho}}{\mathrm{dx}}t+c\frac{\partial t}{\partial x}
 $$
 
 and, with a rearrangement
 
 $$
-\frac{\mathrm{dc}}{c}=\frac{\partial s/\partial y-\partial t/\partial x}{t}
+\frac{\mathrm{d\rho}}{\rho}=\frac{\partial s/\partial y-\partial t/\partial x}{t}
 $$
 
-If the right side turns out to be in the form of $g(x)$, then we can solve for this and find $c$ as it has the form of a fully separable ODE on its own.
+If the right side turns out to be in the form of $g(x)$, then we can solve for this and find $\rho$ as it has the form of a fully separable ODE.
+
+$$
+\frac{\mathrm{d\rho}}{\rho}=g(x)\implies \ln\lvert\rho\rvert=\int g(x)\mathrm{dx}\implies\rho=e^{\int g(x)\mathrm{dx}}
+$$
+
+[^1]: See this post for some clarifications on the notations I used here.
+[^2]: I'll keep this post updated with other patterns and solving techniques as I learn more about them.
