@@ -92,7 +92,7 @@ $$
 ### Identifying The Patterns
 Apart from the last one, the rest are easily identifiable. For the exact-case, there are essentially three tests.
 
-Since we assume that the solution is total differentiable ($h\in C^1(\mathbb{R}^2,\mathbb{R}) $), the partial derivatives are continuous, and the second partial derivatives are equal (why?).
+Since we assume $h\in C^1(\mathbb{R}^2,\mathbb{R})$, the partial derivatives are continuous, and the second partial derivatives are equal (why?).
 
 $$
 \frac{\partial^2 h}{\partial y\partial x}=\frac{\partial^2 h}{\partial x\partial y}
@@ -163,7 +163,7 @@ x\mathrm{dy}+y\mathrm{dx}=d(xy)
 \end{gather}
 $$
 
-These often carries a hint of what $\rho(x,y)$ might make sense. Once we identify $\rho$, we can reuse the double partial tests for exactness.
+These often carry a hint of what $\rho(x,y)$ might make sense. Once we identify $\rho$, we can reuse the double partial tests for exactness.
 
 ### Solving Tricks
 #### Separable
@@ -209,7 +209,7 @@ $$
 \frac{\partial}{\partial y}\left(\int\rho s\mathrm{dx}\right)+g'(y)=\rho t
 $$
 
-We can find $g(y)$ from this (often much more manageable form than this one suggest when solving with actual equations):
+We can find $g(y)$ from this (often in a much more manageable form than this one suggests when solving with actual equations):
 
 $$
 g(y)=\int g'(y)\mathrm{dy}=\int\left(\rho t-\frac{\partial}{\partial y}\left(\int\rho s\mathrm{dx}\right)\right)\mathrm{dy}
@@ -221,7 +221,7 @@ $$
 h=\int\rho s\mathrm{dx}+\int\left(\rho t-\frac{\partial}{\partial y}\left(\int\rho s\mathrm{dx}\right)\right)\mathrm{dy}
 $$
 
-#### Linear: Mapping to to Exact
+#### Linear: Mapping to Exact
 We first note that this can be rearranged in the form
 
 $$
@@ -238,7 +238,7 @@ $$
 
 and hence we obtain our integrating factor as $\rho=e^{\int p\mathrm{dx}}$.
 
-However, due to the fact that it's linear in $y$, solving this turns out to be simpler. If we multiply the integrating factor, we end up with an eqution involving a direct differential:
+However, due to the fact that it's linear in $y$, solving this turns out to be simpler. If we multiply the integrating factor, we end up with an equation involving a direct differential:
 
 $$
 \frac{dy}{dx}e^{\int p\mathrm{dx}}+ype^{\int p\mathrm{dx}}=qe^{\int p\mathrm{dx}}
@@ -270,10 +270,10 @@ $$
 \frac{\partial \rho}{\partial y}s+\rho\frac{\partial s}{\partial y}=\frac{\partial \rho}{\partial x}t+\rho\frac{\partial t}{\partial x}
 $$
 
-Since $\rho$ is only function of $x$, we have $\partial \rho/\partial y=0$ and $\frac{\partial \rho}{\partial x}=\frac{\mathrm{d\rho}}{\mathrm{dx}}$. Therefore the condition we must need to satisfy is
+Since $\rho$ is a function of only $x$, we have $\partial \rho/\partial y=0$ and $\frac{\partial \rho}{\partial x}=\frac{\mathrm{d\rho}}{\mathrm{dx}}$. Therefore the condition we must need to satisfy is
 
 $$
-\rho\frac{\partial s}{\partial y}=\frac{\mathrm{d\rho}}{\mathrm{dx}}t+c\frac{\partial t}{\partial x}
+\rho\frac{\partial s}{\partial y}=\frac{\mathrm{d\rho}}{\mathrm{dx}}t+\rho\frac{\partial t}{\partial x}
 $$
 
 and, with a rearrangement
