@@ -120,9 +120,29 @@ $$
 $$
 
 #### Second Test for Exact
-If the first test fails, identifying $c(x,y)$ in general is typically tough. In the special case where $c$ is a function of $x$ alone, we can find it via a trick.
+If the first test fails, identifying $c(x,y)$ in general is tough. So, if possible, we rely purely on muscle memory as we look for seen patterns, such as
+
+$$
+\begin{align}
+\frac{y\mathrm{dx}-x\mathrm{dy}}{y^2} &=& d\left(\frac{y}{x}\right) \\
+\frac{y\mathrm{dx}-x\mathrm{dy}}{x^2+y^2} &=& d\left(\arctan\left(\frac{y}{x}\right)\right) \\
+\frac{y\mathrm{dx}-x\mathrm{dy}}{xy} &=& d\left(\ln\left(\frac{y}{x}\right)\right) \\
+\end{align}
+$$
+
+or
+
+$$
+\begin{align}
+2(x\mathrm{dx}+y\mathrm{dy}) &=& d(x^2+y^2) \\
+x\mathrm{dy}+y\mathrm{dx} &=& d(xy)
+\end{align}
+$$
+
+which often carries a hint of what $c(x,y)$ might make sense. Once we identify $c$, we can reuse the tests for exactness.
 
 #### Third Test for Exact
+In the special case where $c$ is a function of $x$ alone, we can find it via a trick.
 
 ### Solving Tricks
 #### Leverage Symmetry
