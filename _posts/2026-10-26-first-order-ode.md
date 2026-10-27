@@ -32,7 +32,7 @@ instead of an explicit form for $y=g(x)$ (which is a special case of the above, 
 
 Unless we know what $c$ is, it describes a family of solutions. The fact that we have only one parameter here is because we're dealing with a first-order equation.
 
-The ODE is a description of a vanishing differential of this function $h$ (that is, $dh=0$), and therefore represents tangent lines to these level curves for tiny changes. The form we see them in becomes easier to grasp observing the following:
+The ODE is a description of a vanishing differential of this function $h$ (that is, $dh=0$), and therefore represents tangent lines to these level curves for tiny changes. The form we see them in becomes easier to grasp by observing the following:
 
 $$
 dh = Dh\left[
@@ -47,12 +47,12 @@ dh = Dh\left[
 \end{pmatrix}=\frac{\partial h}{\partial x}\mathrm{dx}+\frac{\partial h}{\partial y}\mathrm{dy}=0
 $$
 
-with $D:h\in C^1(\mathbb{R}^2,\mathbb{R})\mapsto Dh\in\mathcal{L}(\mathbb{R}^2,\mathbb{R})$, where $Dh$ is the derivative of $h$ and $\mathcal{L}(\mathbb{R}^2,\mathbb{R})$ is the space of bounded linear maps from $\mathbb{R}^2$ to $\mathbb{R}$.[^1]
+with $D:h\in C^1(\mathbb{R}^2,\mathbb{R})\mapsto Dh\in C(\mathbb{R}^2, \mathcal{L}(\mathbb{R}^2,\mathbb{R}))$, where $Dh$ is the derivative of $h$ and $\mathcal{L}(\mathbb{R}^2,\mathbb{R})$ is the space of bounded linear maps from $\mathbb{R}^2$ to $\mathbb{R}$.[^1]
 
 ### Solving First-Order ODEs
-The simple looking first-order ODE does not have a general solution. In some cases, however, it is possible to find the solution analytically. These special cases are identifiable by the specific forms it takes.
+The simple looking first-order ODE does not have a general closed-form solution. In some cases, however, it is possible to find the solution analytically. These special cases are identifiable by the specific forms it takes.
 
-In this post we start with some key patterns to look for in $f(x,y)$ which makes them solvable. We discuss ways to identify these patterns, and then lay out ways to go about solving them. Note that although there are quite a few patterns and a few tricks to identify them, every pattern can be mapped to essentially a handful of core solving mechanisms [^2].
+In this post I note some key patterns to look for in $f(x,y)$ which makes them solvable. I include some ways to identify these patterns, and then lay out ways to go about solving them. Note that although there are quite a few patterns and a few tricks to identify them, every pattern can be mapped to essentially a handful of core solving mechanisms [^2]. I'll make several edits to this as I learn more about this topic (in particular, cautionary notes on losing solutions by dividing).
 
 ### Patterns
 #### Separable
@@ -76,7 +76,7 @@ $$
 \frac{dy}{dx}=f(x,y)=p(x)y+q(x)
 $$
 
-It is typically written with $p(x)$ on the left hand side. When we solve it, it would become clear why it is preferred this way:
+It is typically written with $p(x)$ on the left hand side. When we solve it, it becomes clear why it is preferred this way:
 
 $$
 \frac{dy}{dx}+p(x)y=q(x)
@@ -92,13 +92,13 @@ $$
 ### Identifying The Patterns
 Apart from the last one, the rest are easily identifiable. For the exact-case, there are essentially three tests.
 
-Since we assume $h\in C^1(\mathbb{R}^2,\mathbb{R})$, the partial derivatives are continuous, and the second partial derivatives are equal (why?).
+If we assume $h\in C^2(\mathbb{R}^2,\mathbb{R})$, the second partial derivatives are equal (why?).
 
 $$
 \frac{\partial^2 h}{\partial y\partial x}=\frac{\partial^2 h}{\partial x\partial y}
 $$
 
-To check whether this holds, we start by arranging our equation into the form:
+To check whether this holds, we arrange our equation into the form:
 
 $$
 \frac{dy}{dx}=-\frac{s(x,y)}{t(x,y)}
@@ -128,7 +128,7 @@ $$
 $$
 
 #### First Test for Exact
-If it's the first case, we can identify it by testing for the following:
+If it's the first case, we identify it by testing for the following:
 
 $$
 \frac{\partial s}{\partial y}=\frac{\partial t}{\partial x}
@@ -143,14 +143,20 @@ $$
 \frac{\partial s/\partial y-\partial t/\partial x}{t}=g(x)
 $$
 
+Similarly, to test if $\rho$ happens to be a function of $y$ alone, we check
+
+$$
+\frac{\partial t/\partial x-\partial s/\partial y}{x}=g(y)
+$$
+
 #### Third Test for Exact
-If the second test fails as well, then $\rho$ is function of both. In that case, we rely purely on muscle memory as we look for known patterns. A few of them appear frequently once we rearrange a bit:
+If the second test fails, $\rho$ is function of both. In that case, we rely purely on muscle memory as we look for known patterns. A few of them appear frequently once we rearrange a bit:
 
 $$
 \begin{gather}
-\frac{y\mathrm{dx}-x\mathrm{dy}}{y^2}=d\left(\frac{y}{x}\right),\quad \frac{x\mathrm{dy}-y\mathrm{dx}}{x^2}=d\left(\frac{x}{y}\right) \\
-\frac{y\mathrm{dx}-x\mathrm{dy}}{x^2+y^2}=d\left(\arctan\left(\frac{y}{x}\right)\right) \\
-\frac{y\mathrm{dx}-x\mathrm{dy}}{xy}=d\left(\ln\left(\frac{y}{x}\right)\right) \\
+\frac{y\mathrm{dx}-x\mathrm{dy}}{y^2}=d\left(\frac{x}{y}\right),\quad \frac{x\mathrm{dy}-y\mathrm{dx}}{x^2}=d\left(\frac{y}{x}\right) \\
+\frac{y\mathrm{dx}-x\mathrm{dy}}{x^2+y^2}=d\left(\arctan\left(\frac{x}{y}\right)\right) \\
+\frac{y\mathrm{dx}-x\mathrm{dy}}{xy}=d\left(\ln\left(\frac{x}{y}\right)\right)
 \end{gather}
 $$
 
@@ -218,7 +224,7 @@ $$
 The final solution is
 
 $$
-h=\int\rho s\mathrm{dx}+\int\left(\rho t-\frac{\partial}{\partial y}\left(\int\rho s\mathrm{dx}\right)\right)\mathrm{dy}
+h=\int\rho s\mathrm{dx}+\int\left(\rho t-\frac{\partial}{\partial y}\left(\int\rho s\mathrm{dx}\right)\right)\mathrm{dy}=c
 $$
 
 #### Linear: Mapping to Exact
@@ -253,7 +259,7 @@ $$
 Solving it produces
 
 $$
-y=e^{-\int p\mathrm{dx}}\left(\int qe^{\int p\mathrm{dx}}\mathrm{dx+c}\right)
+y=e^{-\int p\mathrm{dx}}\left(\int qe^{\int p\mathrm{dx}}\mathrm{dx}+c\right)
 $$
 
 ### Appendix
@@ -279,13 +285,13 @@ $$
 and, with a rearrangement
 
 $$
-\frac{\mathrm{d\rho}}{\rho}=\frac{\partial s/\partial y-\partial t/\partial x}{t}
+\frac{\mathrm{d\rho}}{\rho}=\left(\frac{\partial s/\partial y-\partial t/\partial x}{t}\right)\mathrm{dx}
 $$
 
 If the right side turns out to be in the form of $g(x)$, then we can solve for this and find $\rho$ as it has the form of a fully separable ODE.
 
 $$
-\frac{\mathrm{d\rho}}{\rho}=g(x)\implies \ln\lvert\rho\rvert=\int g(x)\mathrm{dx}\implies\rho=e^{\int g(x)\mathrm{dx}}
+\frac{\mathrm{d\rho}}{\rho}=g(x)\mathrm{dx}\implies \ln\lvert\rho\rvert=\int g(x)\mathrm{dx}\implies\rho=e^{\int g(x)\mathrm{dx}}
 $$
 
 [^1]: See this post for some clarifications on the notations I used here.
