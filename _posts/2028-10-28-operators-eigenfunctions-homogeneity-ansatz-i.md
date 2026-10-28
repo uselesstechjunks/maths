@@ -75,7 +75,7 @@ $$
 f(x) = \frac{3-x^4}{8x^2}
 $$
 
-Example 5:
+#### Example 5
 
 $$
 P(x) = 0\quad\text{or}\quad P(x) = \frac{4}{9}x^3
