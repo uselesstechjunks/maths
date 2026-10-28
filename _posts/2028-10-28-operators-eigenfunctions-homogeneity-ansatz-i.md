@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Operators, Eigen, Homogeneous, Ansatz"
-date: 2026-08-23
-slug: operators-eigen-homogenous-ansatz-i
+title: "Operators, Eigenfunctions, Homogeneity, Ansatz"
+date: 2026-10-28
+slug: operators-eigenfunctions-homogeneity-ansatz-i
 tags:
   - functional equations
   - ordinary differential equations
