@@ -9,6 +9,8 @@ tags:
 ---
 Note: these notes are pulled from another blog of mine which I am closing. The tone of this note is more expository, intended to be read by an audience who are not me. I am keeping it here just so that I don't lose track of it.
 
+[I still need to clarify that a linearity of the differential operator (differential is a linear transform) and the linearity of the derivative map on tiny nudges (derivative is a linear map) are referring to two different things.]
+
 I did learn a lot while writing these notes. There are still a few things that I feel I don't understand. I'd be adding edits to this as and when the opportunity comes.
 
 ## 1. Differentiation
