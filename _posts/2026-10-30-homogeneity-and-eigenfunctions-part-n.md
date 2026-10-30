@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Homogeneity and Eigenfunctions: Part N"
-date: 2026-11-01
+date: 2026-10-30
 slug: homogeneity-and-eigenfunctions-part-n
 tags:
   - functional equations
@@ -13,7 +13,6 @@ tags:
 Link to previous parts:
 {% assign related_post = site.posts | where: "slug", "homogeneity-and-eigenfunctions-part-1" | first %}
 - [Part 1]({{ related_post.url | relative_url }})
-
 
 ### Problems
 #### Example 1
