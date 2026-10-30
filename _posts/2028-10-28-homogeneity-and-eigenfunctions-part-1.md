@@ -59,4 +59,4 @@ since $e^{rx}>0$ for all $x\in\mathbb{R}$.
 
 {% assign related_post = site.posts | where: "slug", "homogeneity-and-eigenfunctions-part-n" | first %}
 
-See Part N [here]({{ related_post.url | relative_url }}
+See Part N [here]({{ related_post.url | relative_url }})
