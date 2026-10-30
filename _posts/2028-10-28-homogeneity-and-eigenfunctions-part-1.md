@@ -68,16 +68,18 @@ while the parameters depend on some initial condition which are typically provid
 This feels like magic, so in this post I'll try to demystify it, comment on the general technique, and use these techniques to solve some more fun functional equations.
 
 ### Homogeneous Equations
-The first thing I'd notice in all of the equations I've mentioned so far is that it has (or can be rearranged to a shape which would have) $0$ on the right hand side.
+The first thing I'd notice in all of the equations is that it has (or can be rearranged to a shape which would have) $0$ on the right hand side.
 
 $$
-\begin{align}
-f(x+2) - 5f(x+1) + 6f(x) =& 0 \\
-f(4x) - 5f(2x) + 6f(x) =& 0 \\
-x_{n+2} - 5 x_{n+1} + 6 x_n =& 0 \\
-y^{\prime\prime} - 5y' - 6y =& 0
-\end{align}
+\begin{eqnarray}
+f(x+2) - 5f(x+1) + 6f(x) = 0 \\
+f(4x) - 5f(2x) + 6f(x) = 0 \\
+x_{n+2} - 5 x_{n+1} + 6 x_n = 0 \\
+y^{\prime\prime} - 5y' - 6y = 0
+\end{eqnarray}
 $$
+
+The second thing is that they have the same coefficients for the individual terms. The only difference in them is the operation it performs on each of the functions it deals with. Just as a reminder, for the third one we have a sequence which can always be thought of as a function on the integer domain as $x_n:\mathbb{N}\to \mathbb{R}$ with $x_n:n\mapsto x_n$.
 
 {% assign related_post = site.posts | where: "slug", "homogeneity-and-eigenfunctions-part-n" | first %}
 
