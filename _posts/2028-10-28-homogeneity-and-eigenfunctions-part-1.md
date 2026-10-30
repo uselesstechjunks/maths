@@ -30,7 +30,9 @@ $$
 x_{n+2} = 5 x_{n+1} - 6 x_n,\quad x_0=1, x_1=1
 $$
 
-Another example that involves second-order ODEs with constant-coefficients:
+{% assign related_post = site.posts | where: "slug", "first-order-ode" | first %}
+
+Another example that involves second-order ODEs (a natural follow up from first-order ODEs, discussed in this [post]({{ related_post.url | relative_url }}))
 
 $$
 y^{\prime\prime} - 5y' - 6y = 0
@@ -54,3 +56,7 @@ $$
 since $e^{rx}>0$ for all $x\in\mathbb{R}$.
 
 ### Homogeneous Equations
+
+{% assign related_post = site.posts | where: "slug", "homogeneity-and-eigenfunctions-part-n" | first %}
+
+See Part N [here]({{ related_post.url | relative_url }}
