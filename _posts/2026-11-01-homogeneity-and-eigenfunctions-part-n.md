@@ -12,7 +12,7 @@ tags:
 ---
 Link to previous parts:
 {% assign related_post = site.posts | where: "slug", "homogeneity-and-eigenfunctions-part-1" | first %}
-- [Part 1]({{ related_post.url | relative_url }}
+- [Part 1]({{ related_post.url | relative_url }})
 
 
 ### Problems
