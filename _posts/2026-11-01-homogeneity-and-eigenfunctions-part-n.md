@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Eigenfunctions, Homogeneity, Ansatz - Part N"
+title: "Homogeneity and Eigenfunctions: Part N"
 date: 2026-10-28
-slug: eigenfunctions-homogeneity-ansatz-n
+slug: homogeneity-and-eigenfunctions-part-n
 tags:
   - functional equations
   - ordinary differential equations
