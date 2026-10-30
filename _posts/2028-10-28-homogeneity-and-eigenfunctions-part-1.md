@@ -24,7 +24,7 @@ $$
 f(4x) - 5f(2x) + 6f(x) = 0
 $$
 
-The first and the second one look essentially the same, except how the inputs differ. The first one shifts $x$ by $1$ while the next one scales it by $2$.
+The first and the second one look essentially the same, except how the inputs differ. The first one shifts $x$ by $1$ (and then once again) while the next one scales it by $2$ (and then once again).
 
 To make it more interesting, let's consider another one that does not involve a functional equation, but rather a difference equation. Here, we have a sequence $(x_n)$ which must satisfy
 
@@ -68,7 +68,7 @@ while the parameters depend on some initial condition which are typically provid
 This feels like magic, so in this post I'll try to demystify it, comment on the general technique, and use these techniques to solve some more fun functional equations.
 
 ### Homogeneous Equations
-The first thing I'd notice in all of the equations is that it has (or can be rearranged to a shape which would have) $0$ on the right hand side.
+The first thing I notice is that all of the equations have (or can be rearranged to a shape which would have) $0$ on the right hand side.
 
 $$
 \begin{eqnarray}
@@ -79,7 +79,27 @@ y^{\prime\prime} - 5y' - 6y = 0
 \end{eqnarray}
 $$
 
-The second thing is that they have the same coefficients for the individual terms. The only difference in them is the operation it performs on each of the functions it deals with. Just as a reminder, for the third one we have a sequence which can always be thought of as a function on the integer domain as $x_n:\mathbb{N}\to \mathbb{R}$ with $x_n:n\mapsto x_n$.
+The second thing is that they have the same coefficients attached to the individual terms. The only difference in them is the operation it performs on each of the functions it deals with. 
+
+Just as a reminder, for the third one we have a sequence which can always be thought of as a function on the integer domain as $x_n:\mathbb{N}\to \mathbb{R}$ with $x_n:n\mapsto x_n$.
+
+To make it concrete, let's try to extract two specific structures out of these. The first one is a polynomial
+
+
+$$
+P(x) = x^2 - 5x + 6
+$$
+
+and the second one is an operator that defines the most atomic transformation in the functions. What I mean by this is, concretely, 
+
+$$
+\begin{align}
+E:f(x)\mapsto & f(x+1) \\
+S: f(x)\mapsto & f(2x) \\
+E:x_n\mapsto & x_{n+1} \\
+D:y(x)\mapsto & y'(x) \\
+\end{align}
+$$
 
 {% assign related_post = site.posts | where: "slug", "homogeneity-and-eigenfunctions-part-n" | first %}
 
