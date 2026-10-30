@@ -65,16 +65,16 @@ $$
 
 while the parameters depend on some initial condition which are typically provided with the equation.
 
-This feels like magic, so in this post I'll try to demystify it, comment on the general technique, and use these techniques to solve some more fun functional equations.
+This feels like magic. So in this series of posts I'll try to demystify it for myself, understand on the general technique behind all these, and use these to solve some fun problems.
 
 ### Homogeneous Equations
 The first thing I notice is that all of the equations have (or can be rearranged to a shape which would have) $0$ on the right hand side.
 
 $$
 \begin{eqnarray}
+x_{n+2} - 5 x_{n+1} + 6 x_n = 0 \\
 f(x+2) - 5f(x+1) + 6f(x) = 0 \\
 f(4x) - 5f(2x) + 6f(x) = 0 \\
-x_{n+2} - 5 x_{n+1} + 6 x_n = 0 \\
 y^{\prime\prime} - 5y' - 6y = 0
 \end{eqnarray}
 $$
@@ -85,22 +85,52 @@ Just as a reminder, for the third one we have a sequence which can always be tho
 
 To make it concrete, let's try to extract two specific structures out of these. The first one is a polynomial
 
-
 $$
 P(x) = x^2 - 5x + 6
 $$
 
-and the second one is an operator that defines the most atomic transformation in the functions. What I mean by this is, concretely, 
+For the second one, things start looking similar if we could imagine that there is an underlying operator that's taking care of the most atomic transformation in these functions. What I mean by this is, concretely, is that we define the following operators
 
 $$
 \begin{align}
+E:x_n\mapsto & x_{n+1} \\
 E:f(x)\mapsto & f(x+1) \\
 S: f(x)\mapsto & f(2x) \\
-E:x_n\mapsto & x_{n+1} \\
 D:y(x)\mapsto & y'(x) \\
 \end{align}
 $$
 
-{% assign related_post = site.posts | where: "slug", "homogeneity-and-eigenfunctions-part-n" | first %}
+Just as a reminder, operators are transformations that works on functions and outputs other functions.
 
-See Part N [here]({{ related_post.url | relative_url }})
+Let me try to see if we can fit this operator structure neatly inside the polynomial structure. First, we can define higher-order terms for operators $T$ using composition:
+
+$$
+T^2 = T\circ T
+$$
+
+such that
+
+$$
+\begin{align}
+E^2(x_n)&=E(E(x_n))=E(x_{n+1})=x_{n+2} \\
+E^2(f(x))&=E(E(f(x)))=E(f(x+1))=f(x+2) \\
+S^2(f(x))&=S(S(f(x)))=S(f(2x))=f(4x) \\
+D^2(y)&=D(D(y))=D(y')=y^{\prime\prime} \\
+\end{align}
+$$
+
+Now that we can define operator powers, we can fit this inside a polynomial structure. In essence, all we have is, in terms of a placeholder operator $T$, an equation in this general form:
+
+$$
+P(T)(\cdot)=0
+$$
+
+The missing thing for us to be able to write it in the format above is an identify operator $I$ for each of them, so that our equation becomes
+
+$$
+(T^2-5T-6I)(\cdot)=0
+$$
+
+{% assign related_post = site.posts | where: "slug", "homogeneity-and-eigenfunctions-part-2" | first %}
+
+We'll discuss how do we go about solving these in the next [post]({{ related_post.url | relative_url }}).
