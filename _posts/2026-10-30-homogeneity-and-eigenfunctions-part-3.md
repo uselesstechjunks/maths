@@ -14,13 +14,14 @@ tags:
 
 (following from [part 2]({{ related_post.url | relative_url }})).
 
-find factor equation
-establish raw form
-discuss connection with linear algebra
-establish companion matrix and eigenproblem.
-motivate by transition
-establish connection with vector spaces for sequences and differential equations by naming them
-establish connection with kernel space and direct sum
-state theorem $P(T)(x)=\lambda P(\lambda)$
+- transfrom from normal basis to eigenbasis
+- find factor equation
+- establish raw form
+- discuss connection with linear algebra
+- establish companion matrix and eigenproblem.
+- motivate by transition
+- establish connection with vector spaces for sequences and differential equations by naming them
+- establish connection with kernel space and direct sum
+- state theorem $P(T)(x)=\lambda P(\lambda)$
 
 before non-homogenous, read simmons.
