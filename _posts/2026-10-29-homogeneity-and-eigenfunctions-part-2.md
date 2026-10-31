@@ -68,7 +68,7 @@ x_n
 \begin{pmatrix}
 x_{n} \\
 x_{n-1}
-\end{pmatrix}
+\end{pmatrix}=\cdots
 $$
 
 For the matrix power, consider the eigendecomposition of the matrix. We compute the characteristic polynomial as
