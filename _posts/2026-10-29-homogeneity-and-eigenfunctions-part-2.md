@@ -175,39 +175,14 @@ The eigenfunctions are in the null-space of the operator $(T-\lambda I)$. For an
 
 Any function in the null-space is also a valid solution. Therefore, we represent the general solution as a linear combination of these eigenfunctions.
 
-For our example, $\lambda_1=2$ and $\lambda_2=3$ are two solutions which correspond to two eigenvectors of the matrix, producing functional eigenequations $x_{n+1}=2x_n$ and $x_{n+2}=3x_n$. Let's represent $x_n=f_1$ and $x_n=f_2$ being two eigenfunctions corresponding to these equations. Therefore, the linear combination of the following form is the entire space of valid solutions:
+For our example, $\lambda_1=2$ and $\lambda_2=3$ are two eigenvalues which correspond to the eigenvectors of the matrix, producing functional eigenequations $x_{n+1}=2x_n$ and $x_{n+2}=3x_n$. Let's represent the eigenfunctions solving these equations by $x_n=\mu_2$ and $x_n=\mu_3$. Therefore, the linear combination of the following form is the entire space of valid solutions:
 
 $$
-x_n=\alpha f_1 + \beta f_2
+x_n=\alpha \mu_2 + \beta \mu_3
 $$
 
 Note that the trivial solution of $x_n=0$ comes from simply choosing $\alpha=0$ and $\beta=0$.
 
-#### Remarks
-The null-space machinery is a complicated way of stating the fact that when we have roots $x_1$ and $x_2$ for some $P(x)=0$, then anything that looks like $\alpha x_1+\beta x_2$ also solves the polynomial.
-
-$$
-P(x_1)=0, P(x_2)=0\implies P(\alpha x_1+\beta x_2)=\alpha P(x_1)+\beta P(x_2)=0
-$$
-
-This is not what I remember learning when I learned about roots. Also, we should not take this property for granted as the linearity breaks down if the equation is not a homogeneous one. Say, the polynomial (or any of the equations we discussed so far) has the form:
-
-$$
-P(x)=\xi
-$$
-
-and we have two roots
-
-$$
-P(x_1)=\xi,P(x_2)=\xi
-$$
-
-We don't have the linear structure of the solution space anymore as we can verify:
-
-$$
-P(\alpha x_1+\beta x_2)=\alpha P(x_1)+\beta P(x_2)=\alpha\xi+\beta\xi\neq\xi
-$$
+We should not take this property for granted as this superposition breaks down if the equation is not homogeneous. In the next [post]({{ related_post.url | relative_url }}), I'll solve the eigenfunctions for each individual equations from part 1, before moving onto the non-homogenous scenarios.
 
 {% assign related_post = site.posts | where: "slug", "homogeneity-and-eigenfunctions-part-3" | first %}
-
-In the next [post]({{ related_post.url | relative_url }}), I'll solve the eigenfunctions for each individual equations from part 1.
