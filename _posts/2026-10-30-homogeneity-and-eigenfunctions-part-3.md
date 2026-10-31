@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Homogeneity and Eigenfunctions: Part 3"
-date: 2026-10-29
+date: 2026-10-30
 slug: homogeneity-and-eigenfunctions-part-3
 tags:
   - functional equations
