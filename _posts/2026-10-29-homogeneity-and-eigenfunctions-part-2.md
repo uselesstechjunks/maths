@@ -105,10 +105,18 @@ x_n
 x_{n+1}\\
 x_n
 \end{pmatrix}
-\implies x_{n+1}=\lambda x_n\quad \left[T(f(x))=\lambda f(x)\right]
+\implies x_{n+1}=\lambda x_n\quad
 $$
 
-Thinking about the general functional form, this means the following. Corresponding to each of each operator, there are a set of functions for which applying the operator (shift, scale, differentiation, whatever) is the same as just scaling it. Following the linear algebra notion, we call these the eigenfunctions of their corresponding operators.
+Or, going back to the more general form we have:
+
+$$
+T(f(x))=\lambda f(x)\right
+$$
+
+Thinking about this general functional form, this means the following. Corresponding to each operator, there are a set of functions for which applying the operator (shift, scale, differentiation, whatever) results in the same as just scaling those. These functions show invariant nature under the operator (recall that the operator is meant to transform the functions). 
+
+Following the notion from linear algebra, we call these the eigenfunctions of their corresponding operators.
 
 The second insight we obtain is an explanation on why we can combine the solutions. The structure we're dealing with linear. We haven't noticed it yet, but this allows us to claim the following. We extend the notion of null-space of this matrix to the operator. The eigenfunctions are in the null-space of the operator $(T-\lambda I)$. Therefore, they form the basis of the solution space which is linear. For an operator polynomial, we only have finitely many such basis functions. Every other function in the kernel space is a valid solution. Therefore, we represent the general solution as a linear combination of these basis vectors.
 
