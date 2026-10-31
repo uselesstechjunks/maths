@@ -134,16 +134,18 @@ $$
 Now, we can fit this into our polynomial structure. In essence, for each of the equations we discussed, it has this general form:
 
 $$
-P(T)(\cdot)=(T^2 - 5T + 6I)(\cdot)=0
+P(Tf)[\cdot]=(T^2 - 5T + 6I)(f)[\cdot]=0
 $$
 
-It's natural trying to factorise this:
+where $f$ is the input function that the operator $T$ works on.
+
+It's natural to factorise this:
 
 $$
-\left((T-3I)(T-2I)\right)(\cdot)=0
+\left((T-3I)(T-2I)\right)(f)[\cdot]=0
 $$
 
-This hints that there are two solutions, one from $(T-3I)(\cdot)=0$ and another $(T-2I)(\cdot)=0$. This is due to the fact that we have $0$ on the right. If we had something else, things would have been more complicated.
+This hints that there are two solutions, one from $(T-3I)(f)[\cdot]=0$ and another $(T-2I)(f)[\cdot]=0$. This is due to the fact that we have $0$ on the right. If we had something else, things would have been more complicated.
 
 This $0$ makes this a special case. Each of these are examples of homogeneous equations. These often carry hints for solving for the more general case which I'd discuss in the course of this series.
 
