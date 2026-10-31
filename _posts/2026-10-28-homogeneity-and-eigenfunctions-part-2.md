@@ -89,32 +89,34 @@ $$
 
 The characteristic equation has the exact form as our operator polynomial. This matrix is known as the companion matrix of the polynomial.
 
+The first major insight it provides is by connecting the individual terms once we fit in the eigenvalues and solve for eigenvectors:
+
 $$
 \begin{pmatrix}
-x_{n+2} \\
-x_{n+1}
-\end{pmatrix}= 
-\begin{pmatrix}
-3 & 2 \\
-1 & 1
+5 & -6 \\
+1 & 0
 \end{pmatrix}
 \begin{pmatrix}
-3 & 0 \\
-0 & 2
-\end{pmatrix}^n
+x_{n+1}\\
+x_n
+\end{pmatrix}=
+\lambda
 \begin{pmatrix}
-1 & -2 \\
--1 & 3
+x_{n+1}\\
+x_n
 \end{pmatrix}
-\begin{pmatrix}
-x_2 \\
-x_1
-\end{pmatrix}
+\implies x_{n+1}=\lambda x_n\quad \left[T(f(x))=\lambda f(x)\right]
 $$
 
-For our equation, we have the Eigenvalues $\lambda$. Our task in essence is to find special Eigenfunctions which simply scales under our operator.
+Thinking about the general functional form, this means the following. Corresponding to each of each operator, there are a set of functions for which applying the operator (shift, scale, differentiation, whatever) is the same as just scaling it. Following the linear algebra notion, we call these the eigenfunctions of their corresponding operators.
 
+The second insight we obtain is an explanation on why we can combine the solutions. The structure we're dealing with linear. We haven't noticed it yet, but this allows us to claim the following. We extend the notion of null-space of this matrix to the operator. The eigenfunctions are in the null-space of the operator $(T-\lambda I)$. Therefore, they form the basis of the solution space which is linear. For an operator polynomial, we only have finitely many such basis functions. Every other function in the kernel space is a valid solution. Therefore, we represent the general solution as a linear combination of these basis vectors.
 
+For our example, $\lambda_1=2$ and $\lambda_2=3$ are two solutions which correspond to two eigenvectors, producing functional eigenequations $x_{n+1}=2x_n$ and $x_{n+2}=3x_n$. Let's represent $x_n=f_1$ and $x_n=f_2$ being two eigenfunctions corresponding to these. Therefore, any linear combination of the following form is in the kernel space:
+
+$$
+x_n=\alpha f_1 + \beta f_2
+$$
 
 factorise
 find factor equation
