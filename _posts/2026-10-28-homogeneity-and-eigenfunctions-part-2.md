@@ -19,3 +19,15 @@ What we have is a polynomial $P$ with operators $T$
 $$
 P(T)(\cdot)=0
 $$
+
+factorise
+find factor equation
+establish raw form
+discuss connection with linear algebra
+establish companion matrix and eigenproblem.
+motivate by transition
+establish connection with vector spaces for sequences and differential equations by naming them
+establish connection with kernel space and direct sum
+state theorem $P(T)(x)=\lambda P(\lambda)$
+
+before non-homogenous, read simmons.
