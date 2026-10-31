@@ -12,7 +12,7 @@ tags:
 ---
 {% assign related_post = site.posts | where: "slug", "homogeneity-and-eigenfunctions-part-2" | first %}
 
-(Following from [part 2]({{ related_post.url | relative_url }})).
+(following from [part 2]({{ related_post.url | relative_url }})).
 
 find factor equation
 establish raw form
