@@ -68,14 +68,6 @@ x_n
 \begin{pmatrix}
 x_{n} \\
 x_{n-1}
-\end{pmatrix}=\cdots=
-\begin{pmatrix}
-5 & -6 \\
-1 & 0
-\end{pmatrix}^n
-\begin{pmatrix}
-x_2 \\
-x_1
 \end{pmatrix}
 $$
 
@@ -107,23 +99,39 @@ x_n
 x_{n+1}\\
 x_n
 \end{pmatrix}
-\implies x_{n+1}=\lambda x_n\quad
+\implies 
+\begin{pmatrix}
+5x_{n+1}-6x_n\\
+x_{n+1}
+\end{pmatrix}=
+\begin{pmatrix}
+\lambda x_{n+1}\\
+\lambda x_n
+\end{pmatrix}
 $$
 
-Let me add a comment here. Going back to the more general form, this implies our original form:
+$$
+\implies
+\begin{cases}
+x_{n+2}=\lambda x_{n+1}\\
+x_{n+1}=\lambda x_n
+\end{cases}
+$$
+
+Going back to the more general form, this resembles the form we obtained from the factorisation exactly:
 
 $$
 T(f(x))=\lambda f(x)
 $$
 
-Thinking about this general form, this means that corresponding to each operator, there are a set of functions for which applying the operator (shift, scale, differentiation, whatever) results in just scaling. These functions stay invariant in shape under the operator (recall that the operator is meant to transform the functions to produce new ones).
+Let me add a comment here. Thinking about this general form, this means that corresponding to each operator (shift, scale, differentiation, whatever), we have a set of special functions for which applying the operator results in just scaling them. These functions stay invariant in their shape under the operator (recall that the operator is meant to transform the functions to produce new ones).
 
 Following the notion from linear algebra, we call these the eigenfunctions of their corresponding operators.
 
 ### Linearity of the Solution Space
-The second insight we obtain is an explanation for combining the solutions. The structure we're dealing with is linear. We haven't noticed it yet, but this allows us to claim something important. So, let's verify. 
+The second insight we obtain is an explanation for combining the solutions. The operator we're dealing with is linear. We haven't noticed it yet, but this allows us to claim something important. So, let's verify.
 
-This requires that we must have
+Linearity requires that we must have
 
 $$
 T(\alpha f+\beta g)[x]=\alpha T(f)[x]+\beta T(g)[x]
@@ -135,7 +143,7 @@ $$
 D(\alpha f+\beta g)[x]=\alpha D(f)[x]+\beta D(g)[x]=\alpha f'(x)+\beta g'(x)
 $$
 
-For the others, this is seems difficult in the general case:
+For the others, this is seems difficult:
 
 $$
 \begin{align}
@@ -173,7 +181,32 @@ $$
 x_n=\alpha f_1 + \beta f_2
 $$
 
-Note that the trivial solution of $x_n=0$ comes from choosing $\alpha=0$ and $\beta=0$ which is a valid choice.
+Note that the trivial solution of $x_n=0$ comes from simply choosing $\alpha=0$ and $\beta=0$.
+
+#### Remarks
+The null-space machinery is a complicated way of stating the fact that when we have roots $x_1$ and $x_2$ for some $P(x)=0$, then anything that looks like $\alpha x_1+\beta x_2$ also solves the polynomial.
+
+$$
+P(x_1)=0, P(x_2)=0\implies P(\alpha x_1+\beta x_2)=\alpha P(x_1)+\beta P(x_2)=0
+$$
+
+This is not what I remember learning when I learned about roots. Also, we should not take this property for granted as the linearity breaks down if the equation is not a homogeneous one. Say, the polynomial (or any of the equations we discussed so far) has the form:
+
+$$
+P(x)=\xi
+$$
+
+and we have two roots
+
+$$
+P(x_1)=\xi,P(x_2)=\xi
+$$
+
+We don't have the linear structure of the solution space anymore as we can verify:
+
+$$
+P(\alpha x_1+\beta x_2)=\alpha P(x_1)+\beta P(x_2)=\alpha\xi+\beta\xi\neq\xi
+$$
 
 {% assign related_post = site.posts | where: "slug", "homogeneity-and-eigenfunctions-part-3" | first %}
 
