@@ -16,7 +16,7 @@ $$
 f(x+2) - 5f(x+1) + 6f(x) = 0
 $$
 
-A trivial solution to this is when $f(x)=0$ for all $x\in\mathbb{R}$. However, unless we have encountered problems of this sort before, finding non-trivial solutions to this seems difficult.
+A trivial solution to this is when $f(x)=0$ for all $x\in\mathbb{R}$. However, unless we have encountered problems of this sort beforehand, finding a general solution to this seems difficult.
 
 To make things interesting, let's consider another one. The task is the same as before, with the equation being:
 
@@ -24,7 +24,7 @@ $$
 f(4x) - 5f(2x) + 6f(x) = 0
 $$
 
-Let's pause for a second. The first and the second one look very similar. Its the way the inputs to these functions change is different. The first one slides $x$ by $1$ once (and then, once again) while the next one stretches $x$ by $2$ (and again).
+Let's pause for a moment. The first and the second one look very similar. Its the way the inputs to these functions morph between the terms is different. The first one slides $x$ by $1$ once (and then, once again) while the next one stretches $x$ by $2$ (and again).
 
 Let's make this even more interesting by considering one that not a functional equation. Say, we have a sequence $(x_n)$ which must satisfy
 
@@ -36,13 +36,13 @@ and the task is to find a closed form expression for $x_n$. This is known as a d
 
 {% assign related_post = site.posts | where: "slug", "first-order-ode" | first %}
 
-Now, for the last one of this lot, let's include a second-order homogeneous linear ODE with constant coefficients. This is a natural follow up from first-order linear ODEs I discussed in my earlier [post]({{ related_post.url | relative_url }}). Our task is to find solutions of the following:
+Now, for the last example, let's include a second-order homogeneous linear ODE with constant coefficients. This is a natural follow up from first-order linear ODEs I discussed in my earlier [post]({{ related_post.url | relative_url }}). Our task is to find solutions of the following:
 
 $$
 y^{\prime\prime} - 5y' - 6y = 0
 $$
 
-How do we go about solving these? Let's start with the last one as we might be familiar with the typical recipe for it. The recipe tells us that we "assume" that the solution has the form $y(x)=e^{rx}$. We proceed by differentiating first
+How do we go about solving these? Let's start with the last one as we might be familiar with the typical recipe for it. The recipe tells us that we "assume" that $y(x)=e^{rx}$ solves this equation. We then proceed by differentiating
 
 $$
 \begin{align}
@@ -70,7 +70,7 @@ for some parameters $c_1$ and $c_2$. These parameters depend on the initial cond
 The approach seems like magic. In this series of posts I'll try to understand on the general framework, and attempt to solve some fun problems (see [here]({{ related_post.url | relative_url }}), more to come).
 
 ### Homogeneous Equations
-The first thing that pops out of these equations is they have (or, can be rearranged into a shape which has) $0$ on the right hand side (I've rearranged the order):
+The first thing that pops out of these equations is that each of these has (or, can be rearranged into a shape which has) $0$ on the right hand side (I've rearranged the order):
 
 $$
 \begin{eqnarray}
@@ -81,9 +81,9 @@ y^{\prime\prime} - 5y' - 6y = 0
 \end{eqnarray}
 $$
 
-Second, they look identical on the left hand side - the order of the terms and coefficients attached to these terms are the same. By order, I mean by far apart is a term (e.g, $x_{n+2}$) with regards to the base term (e.g, $x_n$) (2 here).
+Second, they look identical on the left hand side: the order of the terms and coefficients attached to these terms are the same. By order, I mean how far apart is a term with regards to the base term. For example, for base term $x_n$, the term $x_{n+2}$) has degree 2.
 
-To make it prominent, let's try to extract this structure in the form of a polynomial:
+To make this structure prominent, let's try to extract a polynomial:
 
 $$
 P([?]) := [?]^2 - 5[?] + 6
@@ -91,13 +91,13 @@ $$
 
 {% assign related_post = site.posts | where: "slug", "derivatives-differentials-gradients" | first %}
 
-In order to do this, we need a way to map each equation into a framework. We recognise the [differential operator]({{ related_post.url | relative_url }}) $Dy=y'$ here. Let's try to extend this. 
+We need a way to treat each equation under a common framework to make use of this. We recognise the [differential operator]({{ related_post.url | relative_url }}) $Dy=y'$ here. Let's try to extend this. 
 
-Instead of a specific operator (e.g., differential for the ODE), we introduce the notion of a general operator $T$. As a reminder, operators are transforms that map functions to other functions (potentially defined on a different domain).
+Instead of a specific operator (e.g., differential for the ODE), we consider the notion of a general operator $T$. As a reminder, operators are transforms that map functions to other functions (potentially defined on a different domain).
 
-Let's define the operators for each case. Let $T=E$ be a "shift" operator that shifts the inputs to the right by $1$. We can use that for $2$ of our cases. Let $T=S$ be the "scale" operator, and $T=D$ stays as usual.
+Let's define the operators concretely for each case. Let $T=E$ be a "shift" operator that shifts the inputs to the right by $1$. We can use that for $2$ of our cases. Let $T=S$ be the "scale" operator, and $T=D$ stays as usual.
 
-Concretely, the notations stand for the following transform:
+These notations stand for the following transform:
 
 $$
 \begin{align}
@@ -125,7 +125,7 @@ D^2(y)&=D(D(y))=D(y')=y^{\prime\prime} \\
 \end{align}
 $$
 
-Second, we have terms that's just $y$ (or $x_n$ or $f(x) $). We need an identify operator. I'm choosing to use the common symbol $T=I$ for this (even though they mean different thing for each case). With this, we to have (verifiable):
+Second, we have terms that's just $y$ (or $x_n$ or $f(x) $). We need an identity operator. I'm choosing to use the common symbol $T=I$ for this (even though they mean different thing for each case). With this, we to have (verifiable):
 
 $$
 T\circ I = I\circ T = T
@@ -145,7 +145,7 @@ $$
 \left((T-3I)(T-2I)\right)(f)[\cdot]=0
 $$
 
-This hints that there are two solutions, one from $(T-3I)(f)[\cdot]=0$ and another $(T-2I)(f)[\cdot]=0$. This is due to the fact that we have $0$ on the right. If we had something else, things would have been more complicated.
+This hints that there are two solutions, one from $(T-3I)(f)[\cdot]=0$ and another $(T-2I)(f)[\cdot]=0$. This is due to the fact that we have $0$ on the right. If we had something else, things would have been complicated.
 
 This $0$ makes this a special case. Each of these are examples of homogeneous equations. These often carry hints for solving for the more general case which I'd discuss in the course of this series.
 
