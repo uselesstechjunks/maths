@@ -14,7 +14,7 @@ tags:
 
 (following from [part 1]({{ related_post.url | relative_url }})).
 
-We have a polynomial equation on an operator which naturally factorises in the form $(T-\lambda I)(f(x))=0$. Rearranging, this is
+We have a polynomial equation on an operator that factorises into the form $(T-\lambda I)(f(x))=0$. Rearranging, this is
 
 $$
 T(f(x))=\lambda f(x)
@@ -26,9 +26,9 @@ $$
 M\mathbf{v}=\lambda\mathbf{v}
 $$
 
-Let's make this concrete by working with our difference equation example. We introduce a vector space in $\mathbb{R}^2$ made up by 2 of the terms in our equations (since we need 2 of the them to determine the next). 
+Let's make this concrete by working with our difference equation example. We introduce a vector space in $\mathbb{R}^2$ that's made up by 2 of the terms in our equations (since we need at least 2 of the them to determine the next).
 
-If we consider one such vector containing terms $x_n$ and $x_{n+1}$, and another containing $x_{n+1}$ and $x_{n+2}$, the equation can be written with matrix notation as follows:
+If we consider one such vector containing terms $x_n$ and $x_{n+1}$, and another containing $x_{n+1}$ and $x_{n+2}$, the equation can be written with matrix notation as follows (verifiable):
 
 $$
 \begin{pmatrix}
@@ -45,7 +45,7 @@ x_n
 \end{pmatrix}
 $$
 
-We can unroll the right hand side:
+We unroll the right hand side:
 
 $$
 \begin{pmatrix}
@@ -89,7 +89,7 @@ $$
 
 The characteristic equation has the exact form as our operator polynomial. This matrix is known as the companion matrix of the polynomial.
 
-The first major insight it provides is by connecting the individual terms once we fit in the eigenvalues and solve for eigenvectors:
+The first major insight it provides is by connecting the subsequent terms once we fit in the eigenvalues to solve for eigenvectors:
 
 $$
 \begin{pmatrix}
@@ -108,23 +108,69 @@ x_n
 \implies x_{n+1}=\lambda x_n\quad
 $$
 
-Or, going back to the more general form we have:
+Let me add a comment here. Going back to the more general form, this implies our original form:
 
 $$
-T(f(x))=\lambda f(x)\right
+T(f(x))=\lambda f(x)
 $$
 
-Thinking about this general functional form, this means the following. Corresponding to each operator, there are a set of functions for which applying the operator (shift, scale, differentiation, whatever) results in the same as just scaling those. These functions show invariant nature under the operator (recall that the operator is meant to transform the functions). 
+Thinking about this general form, this means that corresponding to each operator, there are a set of functions for which applying the operator (shift, scale, differentiation, whatever) results in just scaling. These functions stay invariant in shape under the operator (recall that the operator is meant to transform the functions to produce new ones).
 
 Following the notion from linear algebra, we call these the eigenfunctions of their corresponding operators.
 
-The second insight we obtain is an explanation on why we can combine the solutions. The structure we're dealing with linear. We haven't noticed it yet, but this allows us to claim the following. We extend the notion of null-space of this matrix to the operator. The eigenfunctions are in the null-space of the operator $(T-\lambda I)$. Therefore, they form the basis of the solution space which is linear. For an operator polynomial, we only have finitely many such basis functions. Every other function in the kernel space is a valid solution. Therefore, we represent the general solution as a linear combination of these basis vectors.
+The second insight we obtain is an explanation for combining the solutions. The structure we're dealing with is linear. We haven't noticed it yet, but this allows us to claim something important. So, let's verify. 
 
-For our example, $\lambda_1=2$ and $\lambda_2=3$ are two solutions which correspond to two eigenvectors, producing functional eigenequations $x_{n+1}=2x_n$ and $x_{n+2}=3x_n$. Let's represent $x_n=f_1$ and $x_n=f_2$ being two eigenfunctions corresponding to these. Therefore, any linear combination of the following form is in the kernel space:
+This requires that we must have
+
+$$
+T(\alpha f(x)+\beta g(x))=\alpha T(f(x))+\beta T(g(x))
+$$
+
+For $D$, this is known to hold:
+
+$$
+D(\alpha f(x)+\beta g(x))=\alpha D(f(x))+\beta D(g(x))=\alpha f'(x)+\beta g'(x)
+$$
+
+For the others, this is seems difficult in the general case:
+
+$$
+\begin{align}
+E(\alpha f(x-1)+\beta g(x-1))=\alpha E(f(x-1))+\beta E(g(x-1))=&\alpha f(x)+\beta g(x)\\
+S(\alpha f(x/2)+\beta g(x/2))=\alpha S(f(x/2))+\beta S(g(x/2))=&\alpha f(x)+\beta g(x)
+\end{align}
+$$
+
+For this to hold, we need to completeness on our the function spaces. This should give us the property that having a linear combination of two functions produces another function that remains in the function space. 
+
+Assuming we have that, we can then claim:
+
+$$
+\exists \varphi\in C(\mathbb{R},\mathbb{R}), \textrm{s.t. } \varphi(x)=\alpha f(x)+\beta g(x)
+$$
+
+With this, the linearity holds:
+
+$$
+\begin{align}
+E(\varphi(x-1))=\varphi(x) \\
+S(\varphi(x/2))=\varphi(x)
+\end{align}
+$$
+
+This implies that $(T-\lambda I)$ is also a linear transform. Now we can extend the notion of null-space of this matrix to this operator. 
+
+The eigenfunctions are in the null-space of the operator $(T-\lambda I)$. For an operator polynomial, we only have finitely many basis functions (finite number of roots). Therefore, we have a finite basis of the solution space which is linear.
+
+Every other function in the kernel space is also a valid solution. Therefore, we represent the general solution as a linear combination of these basis eigenfunctions.
+
+For our example, $\lambda_1=2$ and $\lambda_2=3$ are two solutions which correspond to two eigenvectors of the matrix, producing functional eigenequations $x_{n+1}=2x_n$ and $x_{n+2}=3x_n$. Let's represent $x_n=f_1$ and $x_n=f_2$ being two eigenfunctions corresponding to these equations. Therefore, the linear combination of the following form is the entire space of valid solutions:
 
 $$
 x_n=\alpha f_1 + \beta f_2
 $$
+
+Note that the trivial solution of $x_n=0$ comes from choosing $\alpha=0$ and $\beta=0$ which is a valid choice.
 
 {% assign related_post = site.posts | where: "slug", "homogeneity-and-eigenfunctions-part-3" | first %}
 
