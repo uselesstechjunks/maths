@@ -149,4 +149,4 @@ This $0$ makes this a special case. Each of these are examples of homogeneous eq
 
 {% assign related_post = site.posts | where: "slug", "homogeneity-and-eigenfunctions-part-2" | first %}
 
-As an immediate follow up [post]({{ related_post.url | relative_url }}), I'll discuss the general principles for the homogeneous case
+As an immediate follow up [post]({{ related_post.url | relative_url }}), I'll discuss the general principles for the homogeneous case.
