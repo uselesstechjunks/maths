@@ -12,7 +12,7 @@ tags:
 ---
 {% assign related_post = site.posts | where: "slug", "homogeneity-and-eigenfunctions-part-1" | first %}
 
-(Following from [part 1]({{ related_post.url | relative_url }})).
+(following from [part 1]({{ related_post.url | relative_url }})).
 
 We have a polynomial equation on an operator which naturally factorises in the form $(T-\lambda I)(f(x))=0$. Rearranging, this is
 
@@ -118,14 +118,6 @@ $$
 x_n=\alpha f_1 + \beta f_2
 $$
 
-factorise
-find factor equation
-establish raw form
-discuss connection with linear algebra
-establish companion matrix and eigenproblem.
-motivate by transition
-establish connection with vector spaces for sequences and differential equations by naming them
-establish connection with kernel space and direct sum
-state theorem $P(T)(x)=\lambda P(\lambda)$
+{% assign related_post = site.posts | where: "slug", "homogeneity-and-eigenfunctions-part-3" | first %}
 
-before non-homogenous, read simmons.
+In the next [post]({{ related_post.url | relative_url }}), I'll solve the eigenfunctions for each individual equations from part 1.
