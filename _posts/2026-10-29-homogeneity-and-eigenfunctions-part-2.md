@@ -118,7 +118,7 @@ x_{n+1}=\lambda x_n
 \end{cases}
 $$
 
-Going back to the more general form, this resembles the form we obtained from the factorisation exactly:
+This simply reveals that the solution must have the form $x_{n+1}=\lambda x_n$ for all $n$. Going back to the more general form, this resembles what we obtained from the factorisation:
 
 $$
 T(f(x))=\lambda f(x)
@@ -148,7 +148,7 @@ For the others, this is seems difficult:
 $$
 \begin{align}
 E(\alpha f+\beta g)[x-1]=\alpha E(f)[x-1]+\beta E(g)[x-1]=&\alpha f(x)+\beta g(x) \\
-S(\alpha f+\beta g)[x/2]=\alpha S(f)[x/2]+\beta S(g)[x/2]=\alpha f(x)+\beta g(x)
+S(\alpha f+\beta g)[x/2]=\alpha S(f)[x/2]+\beta S(g)[x/2]=&\alpha f(x)+\beta g(x)
 \end{align}
 $$
 
@@ -157,7 +157,7 @@ For this to hold, we need to completeness on our the function spaces. This shoul
 Assuming we have that, we can then claim:
 
 $$
-\exists \varphi\in C(\mathbb{R},\mathbb{R}), \textrm{s.t. } \varphi(x)=\alpha f(x)+\beta g(x)
+\exists \varphi\in \mathcal{F}, \textrm{s.t. } \varphi(x)=\alpha f(x)+\beta g(x)
 $$
 
 With this, the linearity holds:
@@ -173,7 +173,7 @@ This implies that $(T-\lambda I)$ is also a linear operator. Now we can extend t
 
 The eigenfunctions are in the null-space of the operator $(T-\lambda I)$. For an operator polynomial, we have finitely many eigenfunctions (finite number of roots, corresponding to each eigenvalue of the companion matrix). These form the basis of the solution space. Therefore, we have linear solution space with finite basis system.
 
-Every other function in the kernel space is also a valid solution. Therefore, we represent the general solution as a linear combination of these eigenfunctions.
+Any function in the null-space is also a valid solution. Therefore, we represent the general solution as a linear combination of these eigenfunctions.
 
 For our example, $\lambda_1=2$ and $\lambda_2=3$ are two solutions which correspond to two eigenvectors of the matrix, producing functional eigenequations $x_{n+1}=2x_n$ and $x_{n+2}=3x_n$. Let's represent $x_n=f_1$ and $x_n=f_2$ being two eigenfunctions corresponding to these equations. Therefore, the linear combination of the following form is the entire space of valid solutions:
 
