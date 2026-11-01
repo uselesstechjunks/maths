@@ -5,10 +5,9 @@ date: 2026-10-28
 slug: homogeneity-and-eigenfunctions-part-1
 tags:
   - functional equations
-  - ordinary differential equations
   - sequences
   - difference equations
-  - analysis
+  - ordinary differential equations
 ---
 Let's consider a functional equation. We are asked to find all continuous functions $f:\mathbb{R}\to\mathbb{R}$ such that
 
