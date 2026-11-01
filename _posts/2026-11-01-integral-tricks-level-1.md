@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Integral Formulae: Level 1"
-date: 2026-09-10
+title: "Integral Tricks: Level 1"
+date: 2026-11-01
 slug: integral-tricks-level-1
 tags:
   - calculus
