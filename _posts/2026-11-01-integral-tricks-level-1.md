@@ -9,6 +9,87 @@ tags:
   - bag of tricks
   - revision
 ---
+### Indefinite Integrals
+#### Standard Substitutions
+For integrals in the form
+
+$$
+\int f(g(x))g'(x)\mathrm{d}x
+$$
+
+we can substitute $g(x)=t$ as long as $\int f(t)\mathrm{d}t$ exists. Common patterns:
+
+$$
+\begin{align}
+x^2+a^2,\sqrt{x^2+a^2}\implies& x=a\tan(\theta), x=\cot(\theta) \\
+x^2-a^2,\sqrt{x^2-a^2}\implies& x=a\sec(\theta), x=\csc(\theta) \\
+a^2-x^2,\sqrt{a^2-x^2}\implies& x=a\sin(\theta), x=\cos(\theta) \\
+\sqrt{a+x}\textrm{ and }\sqrt{a-x}\implies& x=a\cos(\theta) \\
+\sqrt{(x-a)(b-x)}\implies& x=a\cos^2(\theta)+b\sin^2(\theta) \\
+\left(\sqrt{x^2+a^2}\pm x\right)^n\implies& \sqrt{x^2+a^2}\pm x=t\\
+\left(x\pm\sqrt{x^2+a^2}\right)^n\implies& x\pm\sqrt{x^2+a^2}=t\\
+\frac{1}{(x+a)^c(x+b)^d}\implies&\frac{x+a}{x+b}=t
+\end{align}
+$$
+
+#### Derived Substitutions
+These integrals
+
+$$
+\begin{align}
+\frac{2x^2}{x^4+1}&=\left(\frac{x^2+1}{x^4+1}+\frac{x^2-1}{x^4+1}\right)\\
+\frac{2}{x^4+1}&=\left(\frac{x^2+1}{x^4+1}-\frac{x^2-1}{x^4+1}\right)\\
+\end{align}
+$$
+
+Or, more generally integrals of this form
+
+$$
+\begin{align}
+\frac{2x^2}{x^4+1+kx^2}\\
+\frac{2}{x^4+1+kx^2}\\
+\end{align}
+$$
+
+are solved by dividing by $x^2$ first and then completing the square. The following is an example:
+
+$$
+\int\frac{x^2+1}{x^4-x^2+1}\mathrm{d}x=\int\frac{1+\frac{1}{x^2}}{x^2-1+\frac{1}{x^2}}\mathrm{d}x=\int\frac{\mathrm{d}\left(x-\frac{1}{x}\right)}{\left(x-\frac{1}{x}\right)^2+1}
+$$
+
+Integrals involving the following trigonometric functions can be reduced to the above form by using appropriate substitutions:
+
+$$
+\sqrt{\tan{x}},\sqrt{\cot{x}},\frac{1}{\sin^{2n}(x)+\cos^{2n}(x)}
+$$
+
+#### Integration by Parts
+$$
+\int uv'=uv-\int u'v
+$$
+
+Alternatively
+
+$$
+\int uv=u\int v-\int u'\left(\int v\right)
+$$
+
+#### Partial Fractions
+For rational fractions $\frac{P(X)}{Q(x)}$, we first write
+
+$$
+Q(x)=(x-a)^m\cdots(x^2+bx+c)^n\cdots
+$$
+
+and then
+
+$$
+\frac{P(x)}{Q(x)}=\left(\frac{A_1}{(x-a)}+\frac{A_2}{(x-a)^2}+\cdots+\frac{A_m}{(x-a)^m}\right)+\cdots+\left(\frac{B_1x+C_1}{(x^2+bc+c)}+\frac{B_2x+C_2}{(x^2+bc+c)^2}+\cdots+\frac{B_nx+C_n}{(x^2+bc+c)^n}\right)+\cdots
+$$
+
+#### Algebraic Integrals
+#### Trigonometric Integrals
+
 ### Definite Integrals
 #### Riemann Sum
 For a function $f\in\ C([a,b],\mathbb{R})$, the definite integral is defined as the limit of the Riemann sum
@@ -69,3 +150,5 @@ When $a(x)=a$ and $b(x)=b$ are constants:
 $$
 F'(x)=\int\limits_{a}^{b}\frac{\partial f(x,t)}{\partial x}\mathrm{d}t
 $$
+
+### Standard Integrals
