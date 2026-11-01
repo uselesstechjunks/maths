@@ -87,7 +87,15 @@ $$
 \sqrt{\tan{x}},\sqrt{\cot{x}},\frac{1}{\sin^{2n}(x)+\cos^{2n}(x)}
 $$
 
-#### Rational and Irrational Substitution
+For integrals involving quadratic functions without the linear terms
+
+$$
+\int\frac{1}{(px^2+q)\sqrt{rx^2+s}}\mathrm{d}x
+$$
+
+$x=1/t$ and then $r+st^2=u^2$ works.
+
+#### Rational and Irrational Fractions
 For integrals of this form
 
 $$
@@ -134,15 +142,6 @@ the substitution $L(x)=t$ works.
 
 #### Rationalising Substitution
 Integrals containing irrational functions $(px+q)^{1/n}$, $px+q=t^n$ works.
-
-#### Reciprocal Substitution
-For integrals involving quadratic functions without the linear terms
-
-$$
-\int\frac{1}{(px^2+q)\sqrt{rx^2+s}}\mathrm{d}x
-$$
-
-$x=1/t$ and then $r+st^2=u^2$ works.
 
 #### Euler Substitution
 Special hyperbolic substitution for the following form:
