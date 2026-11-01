@@ -35,23 +35,26 @@ $$
 $$
 
 #### Trigonometric Substitution
+Common patterns:
+
+$$
+\begin{align}
+x^2+a^2,\sqrt{x^2+a^2}\longrightarrow & x=a\tan\theta, x=\cot\theta \\
+x^2-a^2,\sqrt{x^2-a^2}\longrightarrow & x=a\sec\theta, x=\csc\theta \\
+a^2-x^2,\sqrt{a^2-x^2}\longrightarrow & x=a\sin\theta, x=\cos\theta \\
+\sqrt{a+x}\textrm{ and }\sqrt{a-x}\longrightarrow & x=a\cos\theta \\
+\sqrt{(x-a)(b-x)}\longrightarrow & x=a\cos^2\theta+b\sin^2\theta \\
+\end{align}
+$$
+
+#### General Substitution
 For integrals in the form
 
 $$
 \int f(g(x))g'(x)\mathrm{d}x
 $$
 
-we can substitute $g(x)=t$ as long as $\int f(t)\mathrm{d}t$ exists. Common patterns:
-
-$$
-\begin{align}
-x^2+a^2,\sqrt{x^2+a^2}\implies& x=a\tan\theta, x=\cot\theta \\
-x^2-a^2,\sqrt{x^2-a^2}\implies& x=a\sec\theta, x=\csc\theta \\
-a^2-x^2,\sqrt{a^2-x^2}\implies& x=a\sin\theta, x=\cos\theta \\
-\sqrt{a+x}\textrm{ and }\sqrt{a-x}\implies& x=a\cos\theta \\
-\sqrt{(x-a)(b-x)}\implies& x=a\cos^2\theta+b\sin^2\theta \\
-\end{align}
-$$
+we can substitute $g(x)=t$ as long as $\int f(t)\mathrm{d}t$ exists. 
 
 #### Reciprocal Substitution
 These integrals
@@ -84,7 +87,7 @@ $$
 \sqrt{\tan{x}},\sqrt{\cot{x}},\frac{1}{\sin^{2n}(x)+\cos^{2n}(x)}
 $$
 
-#### Algebraic Integrals
+#### Rational and Irrational Substitution
 For integrals of this form
 
 $$
