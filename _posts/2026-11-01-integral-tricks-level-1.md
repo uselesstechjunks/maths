@@ -36,6 +36,15 @@ $$
 $$
 
 #### Periodic Functions
+For periodic functions with period $T$
+
+$$
+\begin{align}
+\int\limits_a^{a+nT}f(x)\mathrm{dx}&=n\int\limits_0^T f(x)\mathrm{dx},\quad n\in\mathbb{Z} \\
+\int\limits_{a+nT}^{b+nT} f(x)\mathrm{dx}&=\int\limits_a^b f(x)\mathrm{dx},\quad n\in\mathbb{Z} \\
+\int\limits_{a+mT}^{b+nT} f(x)\mathrm{dx}&=(n-m)\int\limits_0^T f(x)\mathrm{dx},\quad n,m\in\mathbb{Z}
+\end{align}
+$$
 
 #### Leibnitz Rule
 For a function 
