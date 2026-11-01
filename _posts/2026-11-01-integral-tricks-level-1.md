@@ -132,6 +132,18 @@ $$
 Q_n=pLQ'_d+qL+r
 $$
 
+For integrals of the form
+
+$$
+\int\frac{N(\sin,\cos)}{D(\sin,\cos)}\mathrm{d}x
+$$
+
+the same trick from the algebraic case seems to work
+
+$$
+N=pD+qD'+r
+$$
+
 If we have
 
 $$
@@ -183,18 +195,6 @@ and
 
 $$
 \sin x=\frac{2t}{1+t^2},\cos x=\frac{1-t^2}{1+t^2}
-$$
-
-For integrals of the form
-
-$$
-\int\frac{N(\sin,\cos)}{D(\sin,\cos)}\mathrm{d}x
-$$
-
-the same trick from the algebraic case seems to work
-
-$$
-N=pD+qD'+r
 $$
 
 #### Trigonometric power-reduction method
