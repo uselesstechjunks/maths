@@ -8,6 +8,7 @@ tags:
   - laplace transform
   - differential equations
   - calculus
+  - revision
 ---
 {% assign related_post = site.posts | where: "slug", "dirichlet-laplace-feynman" | first %}
 
