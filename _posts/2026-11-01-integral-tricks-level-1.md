@@ -75,20 +75,119 @@ $$
 $$
 
 #### Partial Fractions
-For rational fractions $\frac{P(X)}{Q(x)}$, we first write
+For rational fractions $\frac{N(X)}{D(x)}$, we first write
 
 $$
-Q(x)=(x-a)^m\cdots(x^2+bx+c)^n\cdots
+D(x)=(x-a)^m\cdots(x^2+bx+c)^n\cdots
 $$
 
 and then
 
 $$
-\frac{P(x)}{Q(x)}=\left(\frac{A_1}{(x-a)}+\frac{A_2}{(x-a)^2}+\cdots+\frac{A_m}{(x-a)^m}\right)+\cdots+\left(\frac{B_1x+C_1}{(x^2+bc+c)}+\frac{B_2x+C_2}{(x^2+bc+c)^2}+\cdots+\frac{B_nx+C_n}{(x^2+bc+c)^n}\right)+\cdots
+\frac{N(x)}{D(x)}=\left(\frac{A_1}{(x-a)}+\frac{A_2}{(x-a)^2}+\cdots+\frac{A_m}{(x-a)^m}\right)+\cdots+\left(\frac{B_1x+C_1}{(x^2+bc+c)}+\frac{B_2x+C_2}{(x^2+bc+c)^2}+\cdots+\frac{B_nx+C_n}{(x^2+bc+c)^n}\right)+\cdots
 $$
 
 #### Algebraic Integrals
+For integrals of this form
+
+$$
+\int\frac{L(x)}{Q(x)}\mathrm{d}x,\int\frac{L(x)}{\sqrt{Q(x)}}\mathrm{d}x,\int L(x)\sqrt{Q(x)}\mathrm{d}x
+$$
+
+where $L$ is a linear function and $Q$ is a quadratic function, we express
+
+$$
+L(x)=p(\mathrm{d}Q)+q
+$$
+
+If we have
+
+$$
+\int\frac{Q_n(x)}{Q_d(x)}\mathrm{d}x, \int\frac{Q_n(x)}{\sqrt{Q_d(x)}}\mathrm{d}x
+$$
+
+where both $Q_n$ and $Q_d$ are quadratic, we express
+
+$$
+Q_n=p(Q_d)+q(\mathrm{d}Q_q)+r
+$$
+
+If we have 
+
+$$
+\int\frac{Q_n(x)}{L(x)\sqrt{Q_d(x)}}\mathrm{d}x
+$$
+
+we express
+
+$$
+Q_n=p\left(L\cdot\mathrm{d}(Q_d)\right)+qL+r
+$$
+
+If we have
+
+$$
+\int\frac{1}{L(x)^r\sqrt{Q(x)}}\mathrm{d}x
+$$
+
+the substitution $L(x)=t$ works.
+
+Integrals containing irrational functions $(px+q)^{1/n}$, $px+q=t^n$ works.
+
+For integrals involving quadratic functions without the linear terms
+
+$$
+\int\frac{1}{(px^2+q)\sqrt{rx^2+s}}\mathrm{d}x
+$$
+
+$x=1/t$ and then $r+st^2=u^2$ works.
+
 #### Trigonometric Integrals
+Let $R$ represent a rational function. For integrals of the form
+
+$$
+\int R(\sin(x),\cos(x))\mathrm{d}x
+$$
+
+we can use the universal substitution
+
+$$
+\tan\left(\frac{x}{2}\right)=t
+$$
+
+such that
+
+$$
+\mathrm{d}x=\frac{2\mathrm{d}t}{1+t^2}
+$$
+
+and 
+
+$$
+\sin(x)=\frac{2t}{1+t^2},\cos(x)=\frac{1-t^2}{1+t^2}
+$$
+
+For integrals of the form
+
+$$
+\int\frac{N(\sin,\cos)}{D(\sin,\cos)}\mathrm{d}x
+$$
+
+the same trick from the algebraic case seems to work
+
+$$
+N(\sin,\cos)=p D(\sin,\cos) + q\left(\mathrm{d}D(\sin,\cos)\right)+r
+$$
+
+For integrals of the following form
+
+$$
+\int\sin^m(x)\cos^n(x)\mathrm{d}x,\quad m,n\in\mathbb{N}
+$$
+
+- if one of $m$ or $n$ is odd, substitute for the even one
+- if both are odd, substitute either
+- if both are even, use trigonometric identities
 
 ### Definite Integrals
 #### Riemann Sum
