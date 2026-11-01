@@ -7,6 +7,7 @@ tags:
   - ordinary differential equations
   - differential equations
   - bag of tricks
+  - revision
 ---
 Let's consider first-order ordinary differential equations (ODEs). As a reminder, an ODE involving $x$ and $y(x)$ of order $n$ in general form looks like this:
 
