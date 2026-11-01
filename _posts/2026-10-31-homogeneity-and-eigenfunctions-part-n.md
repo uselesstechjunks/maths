@@ -5,11 +5,11 @@ date: 2026-10-31
 slug: homogeneity-and-eigenfunctions-part-n
 tags:
   - functional equations
-  - ordinary differential equations
   - sequences
   - difference equations
-  - analysis
+  - ordinary differential equations
 ---
+
 Link to previous parts:
 {% assign related_post = site.posts | where: "slug", "homogeneity-and-eigenfunctions-part-1" | first %}
 - [Part 1]({{ related_post.url | relative_url }})
