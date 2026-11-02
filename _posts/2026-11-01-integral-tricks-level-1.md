@@ -15,14 +15,10 @@ $$
 \int u\mathrm{d}v=uv-\int v\mathrm{d}u
 $$
 
-Alternatively
-
-$$
-\int uv=u\int v-\int u'\left(\int v\right)
-$$
-
 #### Partial Fraction Decomposition
-This decomposition applies directly when the rational function $\frac{N(x)}{D(x)}$ is proper, meaning $\deg N<\deg D$. Otherwise, perform polynomial division first. Once we have it in the correct form, we write
+This decomposition applies directly when the rational function $\frac{N(x)}{D(x)}$ is proper, meaning $\deg N<\deg D$. Otherwise, perform polynomial division first. 
+
+Once we have it in the correct form, assuming that the quadratic terms are not reducible into linear factors (e.g., $b^2<4c$), we write
 
 $$
 D(x)=(x-a)^m\cdots(x^2+bx+c)^n\cdots
@@ -39,10 +35,10 @@ Common patterns:
 
 $$
 \begin{align}
-x^2+a^2,\sqrt{x^2+a^2}\longrightarrow & x=a\tan\theta, x=\cot\theta \\
-x^2-a^2,\sqrt{x^2-a^2}\longrightarrow & x=a\sec\theta, x=\csc\theta \\
-a^2-x^2,\sqrt{a^2-x^2}\longrightarrow & x=a\sin\theta, x=\cos\theta \\
-\sqrt{a+x}\textrm{ and }\sqrt{a-x}\longrightarrow & x=a\cos\theta \\
+x^2+a^2,\sqrt{x^2+a^2}\longrightarrow & x=a\tan\theta, x=a\cot\theta \\
+x^2-a^2,\sqrt{x^2-a^2}\longrightarrow & x=a\sec\theta, x=a\csc\theta \\
+a^2-x^2,\sqrt{a^2-x^2}\longrightarrow & x=a\sin\theta, x=a\cos\theta \\
+\sqrt{a+x}\textrm{ and }\sqrt{a-x}\longrightarrow & x=a\cos2\theta \\
 \sqrt{(x-a)(b-x)}\longrightarrow & x=a\cos^2\theta+b\sin^2\theta \\
 \end{align}
 $$
@@ -84,7 +80,7 @@ $$
 Integrals involving the following trigonometric functions can be reduced to the above form by using appropriate substitutions:
 
 $$
-\sqrt{\tan{x}},\sqrt{\cot{x}},\frac{1}{\sin^{2n}(x)+\cos^{2n}(x)}
+\sqrt{\tan{x}},\sqrt{\cot{x}},\frac{1}{\sin^4(x)+\cos^4(x)},\frac{1}{\sin^6(x)+\cos^6(x)}
 $$
 
 For integrals involving quadratic functions without the linear terms
@@ -135,7 +131,7 @@ $$
 For integrals of the form
 
 $$
-\int\frac{N(\sin,\cos)}{D(\sin,\cos)}\mathrm{d}x
+\int\frac{N(=p\sin x+q\cos x+r)}{D(=a\sin x+b\cos x+c)}\mathrm{d}x
 $$
 
 the same trick from the algebraic case seems to work
@@ -150,7 +146,7 @@ $$
 \int\frac{1}{L(x)^r\sqrt{Q(x)}}\mathrm{d}x
 $$
 
-the substitution $L(x)=t$ works.
+the substitution $L(x)=1/t$ works.
 
 #### Rationalising Substitution
 Integrals containing irrational functions $(px+q)^{1/n}$, $px+q=t^n$ works.
@@ -159,10 +155,7 @@ Integrals containing irrational functions $(px+q)^{1/n}$, $px+q=t^n$ works.
 Special hyperbolic substitution for the following form:
 
 $$
-\begin{align}
-\left(\sqrt{x^2+a^2}\pm x\right)\implies& \sqrt{x^2+a^2}\pm x=t\\
-\left(x\pm\sqrt{x^2+a^2}\right)\implies& x\pm\sqrt{x^2+a^2}=t\\
-\end{align}
+\left(\pm x\pm\sqrt{x^2+a^2}\right)\longrightarrow \pm x\pm\sqrt{x^2+a^2}=t
 $$
 
 #### Möbius Substitution
@@ -197,6 +190,8 @@ $$
 \sin x=\frac{2t}{1+t^2},\cos x=\frac{1-t^2}{1+t^2}
 $$
 
+Note that if we have definite integral in the form, this substitution breaks down at $\pi/2$. So we need to convert this into piecewise first.
+
 #### Trigonometric power-reduction method
 For integrals of the following form
 
@@ -204,14 +199,14 @@ $$
 \int\sin^m(x)\cos^n(x)\mathrm{d}x,\quad m,n\in\mathbb{N}
 $$
 
-- if one of $m$ or $n$ is odd, substitute for the even one
+- if one of $m$ or $n$ is odd, peel off one term from the odd-powered one and substitute for the remaining even term as follows:
 
 $$
 \sin^2x=1-\cos^2x,\quad\cos^2x=1-\sin^2x
 $$
 
-- if both are odd, substitute either
-- if both are even, use trigonometric identities
+- if both are odd, pick either one of them and substitute as above
+- if both are even, use the double-angle identities
 
 $$
 \sin^2x=\frac{1-\cos2x}{2},\quad\cos^2x=\frac{1+\cos2x}{2}
@@ -272,6 +267,12 @@ $$
 F'(x)=\int\limits_{a(x)}^{b(x)}\frac{\partial f(x,t)}{\partial x}\mathrm{d}t+\left[f(x,t)\frac{\mathrm{d}t}{\mathrm{d}x}\right]_{t=a(x)}^{t=b(x)}
 $$
 
+where I've used the shorthand notation for the second term:
+
+$$
+\left[f(x,t)\frac{\mathrm{d}t}{\mathrm{d}x}\right]_{t=a(x)}^{t=b(x)}=f(x,b(x))b'(x)-f(x,a(x))a'(x)
+$$
+
 When $a(x)=a$ and $b(x)=b$ are constants:
 
 $$
@@ -279,5 +280,3 @@ F'(x)=\int\limits_{a}^{b}\frac{\partial f(x,t)}{\partial x}\mathrm{d}t
 $$
 
 This is known as Feynman's technique of differentiating under the integral sign.
-
-### Standard Integrals
