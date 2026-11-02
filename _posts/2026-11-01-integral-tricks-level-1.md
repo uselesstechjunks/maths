@@ -10,12 +10,26 @@ tags:
   - revision
 ---
 ### Indefinite Integrals
-#### Integration by Parts
+
+#### Basic Moves
+
+##### General Substitution
+For integrals in the form
+
+$$
+\int f(g(x))g'(x)\mathrm{d}x
+$$
+
+we can substitute $g(x)=t$ as long as $\int f(t)\mathrm{d}t$ exists. 
+
+##### Integration by Parts
 $$
 \int u\mathrm{d}v=uv-\int v\mathrm{d}u
 $$
 
-#### Partial Fraction Decomposition
+#### Splitting the Integrand
+
+##### Partial Fraction Decomposition
 This decomposition applies directly when the rational function $\frac{N(x)}{D(x)}$ is proper, meaning $\deg N<\deg D$. Otherwise, perform polynomial division first. 
 
 Once we have it in the correct form, assuming that the quadratic terms are not reducible into linear factors (e.g., $b^2<4c$), we write
@@ -30,68 +44,7 @@ $$
 \frac{N(x)}{D(x)}=\left(\frac{A_1}{(x-a)}+\frac{A_2}{(x-a)^2}+\cdots+\frac{A_m}{(x-a)^m}\right)+\cdots+\left(\frac{B_1x+C_1}{(x^2+bx+c)}+\frac{B_2x+C_2}{(x^2+bx+c)^2}+\cdots+\frac{B_nx+C_n}{(x^2+bx+c)^n}\right)+\cdots
 $$
 
-#### Trigonometric Substitution
-Common patterns:
-
-$$
-\begin{align}
-x^2+a^2,\sqrt{x^2+a^2}\longrightarrow & x=a\tan\theta, x=a\cot\theta \\
-x^2-a^2,\sqrt{x^2-a^2}\longrightarrow & x=a\sec\theta, x=a\csc\theta \\
-a^2-x^2,\sqrt{a^2-x^2}\longrightarrow & x=a\sin\theta, x=a\cos\theta \\
-\sqrt{a+x}\textrm{ and }\sqrt{a-x}\longrightarrow & x=a\cos2\theta \\
-\sqrt{(x-a)(b-x)}\longrightarrow & x=a\cos^2\theta+b\sin^2\theta \\
-\end{align}
-$$
-
-#### General Substitution
-For integrals in the form
-
-$$
-\int f(g(x))g'(x)\mathrm{d}x
-$$
-
-we can substitute $g(x)=t$ as long as $\int f(t)\mathrm{d}t$ exists. 
-
-#### Reciprocal Substitution
-These integrals
-
-$$
-\begin{align}
-\frac{2x^2}{x^4+1}&=\left(\frac{x^2+1}{x^4+1}+\frac{x^2-1}{x^4+1}\right)\\
-\frac{2}{x^4+1}&=\left(\frac{x^2+1}{x^4+1}-\frac{x^2-1}{x^4+1}\right)\\
-\end{align}
-$$
-
-Or, more generally integrals of this form
-
-$$
-\begin{align}
-\frac{2x^2}{x^4+1+kx^2}\\
-\frac{2}{x^4+1+kx^2}\\
-\end{align}
-$$
-
-are solved by dividing by $x^2$ first and then completing the square. The following is an example:
-
-$$
-\int\frac{x^2+1}{x^4-x^2+1}\mathrm{d}x=\int\frac{1+\frac{1}{x^2}}{x^2-1+\frac{1}{x^2}}\mathrm{d}x=\int\frac{\mathrm{d}\left(x-\frac{1}{x}\right)}{\left(x-\frac{1}{x}\right)^2+1}
-$$
-
-Integrals involving the following trigonometric functions can be reduced to the above form by using appropriate substitutions:
-
-$$
-\sqrt{\tan{x}},\sqrt{\cot{x}},\frac{1}{\sin^4(x)+\cos^4(x)},\frac{1}{\sin^6(x)+\cos^6(x)}
-$$
-
-For integrals involving quadratic functions without the linear terms
-
-$$
-\int\frac{1}{(px^2+q)\sqrt{rx^2+s}}\mathrm{d}x
-$$
-
-$x=1/t$ and then $r+st^2=u^2$ works.
-
-#### Rational and Irrational Fractions
+##### Rational and Irrational Fractions
 For integrals of this form
 
 $$
@@ -148,24 +101,59 @@ $$
 
 the substitution $L(x)=1/t$ works.
 
-#### Rationalising Substitution
+##### Trigonometric power-reduction method
+For integrals of the following form
+
+$$
+\int\sin^m(x)\cos^n(x)\mathrm{d}x,\quad m,n\in\mathbb{N}
+$$
+
+- if one of $m$ or $n$ is odd, peel off one term from the odd-powered one and substitute for the remaining even term as follows:
+
+$$
+\sin^2x=1-\cos^2x,\quad\cos^2x=1-\sin^2x
+$$
+
+- if both are odd, pick either one of them and substitute as above
+- if both are even, use the double-angle identities
+
+$$
+\sin^2x=\frac{1-\cos2x}{2},\quad\cos^2x=\frac{1+\cos2x}{2}
+$$
+
+#### Making It Rational
+
+##### Rationalising Substitution
 Integrals containing irrational functions $(px+q)^{1/n}$, $px+q=t^n$ works.
 
-#### Euler Substitution
-Special hyperbolic substitution for the following form:
-
-$$
-\left(\pm x\pm\sqrt{x^2+a^2}\right)\longrightarrow \pm x\pm\sqrt{x^2+a^2}=t
-$$
-
-#### Möbius Substitution
+##### Möbius Substitution
 Applicable for the following form
 
 $$
 \frac{1}{(x+a)^c(x+b)^d}\implies \frac{x+a}{x+b}=t
 $$
 
-#### Weierstrass Substitution
+##### Trigonometric Substitution
+Common patterns:
+
+$$
+\begin{align}
+x^2+a^2,\sqrt{x^2+a^2}\longrightarrow & x=a\tan\theta, x=a\cot\theta \\
+x^2-a^2,\sqrt{x^2-a^2}\longrightarrow & x=a\sec\theta, x=a\csc\theta \\
+a^2-x^2,\sqrt{a^2-x^2}\longrightarrow & x=a\sin\theta, x=a\cos\theta \\
+\sqrt{a+x}\textrm{ and }\sqrt{a-x}\longrightarrow & x=a\cos2\theta \\
+\sqrt{(x-a)(b-x)}\longrightarrow & x=a\cos^2\theta+b\sin^2\theta \\
+\end{align}
+$$
+
+##### Euler Substitution
+Special hyperbolic substitution for the following form:
+
+$$
+\left(\pm x\pm\sqrt{x^2+a^2}\right)\longrightarrow \pm x\pm\sqrt{x^2+a^2}=t
+$$
+
+##### Weierstrass Substitution
 Let $R$ represent a rational function. For integrals of the form
 
 $$
@@ -192,27 +180,49 @@ $$
 
 Note that if we have definite integral in the form, this substitution breaks down at $\pi/2$. So we need to convert this into piecewise first.
 
-#### Trigonometric power-reduction method
-For integrals of the following form
+#### Structural Substitutions
+
+##### Reciprocal Substitution
+These integrals
 
 $$
-\int\sin^m(x)\cos^n(x)\mathrm{d}x,\quad m,n\in\mathbb{N}
+\begin{align}
+\frac{2x^2}{x^4+1}&=\left(\frac{x^2+1}{x^4+1}+\frac{x^2-1}{x^4+1}\right)\\
+\frac{2}{x^4+1}&=\left(\frac{x^2+1}{x^4+1}-\frac{x^2-1}{x^4+1}\right)\\
+\end{align}
 $$
 
-- if one of $m$ or $n$ is odd, peel off one term from the odd-powered one and substitute for the remaining even term as follows:
+Or, more generally integrals of this form
 
 $$
-\sin^2x=1-\cos^2x,\quad\cos^2x=1-\sin^2x
+\begin{align}
+\frac{2x^2}{x^4+1+kx^2}\\
+\frac{2}{x^4+1+kx^2}\\
+\end{align}
 $$
 
-- if both are odd, pick either one of them and substitute as above
-- if both are even, use the double-angle identities
+are solved by dividing by $x^2$ first and then completing the square. The following is an example:
 
 $$
-\sin^2x=\frac{1-\cos2x}{2},\quad\cos^2x=\frac{1+\cos2x}{2}
+\int\frac{x^2+1}{x^4-x^2+1}\mathrm{d}x=\int\frac{1+\frac{1}{x^2}}{x^2-1+\frac{1}{x^2}}\mathrm{d}x=\int\frac{\mathrm{d}\left(x-\frac{1}{x}\right)}{\left(x-\frac{1}{x}\right)^2+1}
 $$
+
+Integrals involving the following trigonometric functions can be reduced to the above form by using appropriate substitutions:
+
+$$
+\sqrt{\tan{x}},\sqrt{\cot{x}},\frac{1}{\sin^4(x)+\cos^4(x)},\frac{1}{\sin^6(x)+\cos^6(x)}
+$$
+
+For integrals involving quadratic functions without the linear terms
+
+$$
+\int\frac{1}{(px^2+q)\sqrt{rx^2+s}}\mathrm{d}x
+$$
+
+$x=1/t$ and then $r+st^2=u^2$ works.
 
 ### Definite Integrals
+
 #### Riemann Sum
 For a function $f\in\ C([a,b],\mathbb{R})$, the definite integral is defined as the limit of the Riemann sum
 
@@ -237,10 +247,16 @@ $$
 \begin{align}
 \quad\int\limits_a^b f(x)\mathrm{d}x&=-\int\limits_b^a f(x)\mathrm{d}x \\
 \quad\int\limits_a^b f(x)\mathrm{d}x&=\int\limits_a^c f(x)\mathrm{d}x+\int\limits_c^b f(x)\mathrm{d}x\quad\textrm{[useful for for piecewise continuous]} \\
+\quad\int\limits_a^b f(x)\mathrm{d}x&=(b-a)\int\limits_0^1 f((b-a)x+a)\mathrm{d}x\quad\textrm{[change-of-variables identity]}
+\end{align}
+$$
+
+#### Symmetry and Reflection
+$$
+\begin{align}
 \quad\int\limits_a^b f(x)\mathrm{d}x&=\int\limits_a^b f(a+b-x)\mathrm{d}x\quad\textrm{[King's formula]} \\
 \quad\int\limits_0^b f(x)\mathrm{d}x&=\int\limits_0^{b/2} f(x)\mathrm{d}x+\int\limits_0^{b/2} f(b-x)\mathrm{d}x \\
-\quad\int\limits_{-b}^b f(x)\mathrm{d}x&=\int\limits_0^b f(x)\mathrm{d}x+\int\limits_0^b f(-x)\mathrm{d}x\\
-\quad\int\limits_a^b f(x)\mathrm{d}x&=(b-a)\int\limits_0^1 f((b-a)x+a)\mathrm{d}x\quad\textrm{[change-of-variables identity]}
+\quad\int\limits_{-b}^b f(x)\mathrm{d}x&=\int\limits_0^b f(x)\mathrm{d}x+\int\limits_0^b f(-x)\mathrm{d}x
 \end{align}
 $$
 
